@@ -1,0 +1,72 @@
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\LARGE
+\huge
+\Huge
+
+
+\newcommand{command}[arguments][optional]{definition}
+command
+The name of the new command, starting with a backslash followed by lowercase and/or uppercase letters or a backslash followed by a single non-letter symbol. That name must not be already defined and is not allowed to begin with \end.
+
+arguments
+An integer from 1 to 9, the number of arguments of the new command. If omitted, the command will have no arguments.
+
+optional
+If this is present, then the first of the arguments would be optional with a default value given here. Otherwise all arguments are mandatory.
+
+definition
+Every occurrence of the command will be replaced by definition and every occurrence of the form #n will then be replaced by the nth argument.
+
+
+\parbox[alignment]{width}{text}
+\parbox[alignment][height][inner alignment]{width}{text}
+\begin{minipage}{width}
+\end{minipage}
+
+\footnote{text}
+
+\hyphenation{acro-nym}
+\hyphenation{ac-ro-nym ac-ro-nym-ic a-cro-nym-i-cal-ly}
+\mbox{indivisible}.
+
+\\[value] %would insert additional vertical space after the break depending on the value, like \\[3mm].
+
+The command \linebreak has a direct counterpart: \nolinebreak. This command prevents a line break at the current position. Like its counterpart, it takes an optional argument. If you write \nolinebreak[0], you recommend to not break the line there. Using 1, 2, or even 3 makes the request stronger and \nolinebreak[4] forbids it completely. The latter will be presumed if you don't provide an argument.
+
+\enlargethispage{\baselineskip} 
+There's a starred version: \enlargethispage* would additionally shrink all vertical spaces on the page to their minimum.
+
+
+\includegraphics[height=10cm,width=10cm,scale=1,angle=0]{imagefile}
+
+There are starred forms of floats, namely, figure* and table*. In a two-column layout, they put the float into a single column. In one-column mode, there's no difference to the non-starred form.
+
+ \begin{wrapfigure}[number of lines]{placement}[overhang] {width}
+ 	
+ 	\addcontentsline{toc}{chapter}{Preface}
+ 	
+ 	\addtocontents{toc}{\bigskip}
+ 	\addcontentsline{toc}{part}{Appendix}
+ 	
+ 	\part				-1  (book and report class)
+ 	\chapter		   	 0  (not available in article class)
+ 	\section			 1
+ 	\subsection			 2
+ 	\subsubsection		 3
+ 	\paragraph			 4
+ 	\subparagraph		 5
+
+ \href{URL}{text} makes text to a hyperlink, which points to the URL address
+ \url{URL} prints the URL and links it
+ \nolinkurl{URL} prints the URL without linking it
+ \hyperref{label}{text} changes text to a hyperlink, which links to the place where the label has been set, thus to the same place \ref{label} would point to
+ \hypertarget{name}{text} creates a target name for potential hyperlinks with text as the anchor
+ \hyperlink{name}{text} makes text to a hyperlink, which points to the target name
+
+
+\section{The equation \texorpdfstring{$y=x^2$}{y=x\texttwosuperior}}
