@@ -1,0 +1,29 @@
+.DS_Store
+
+# co-product files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.idx
+*.ilg
+*.ind
+*.out
+# lists/tables of contents
+*.loe
+*.lof
+*.lol
+*.toc
+*.lot
+minted_package_cache/*
+
+*.gz
+*.xml
+
+# ignore results
+*.pdf
+
