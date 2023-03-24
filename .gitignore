@@ -1,6 +1,7 @@
+# MacOS stuff
 .DS_Store
 
-# co-product files
+# Co-product files
 *.aux
 *.fdb_latexmk
 *.fls
@@ -13,17 +14,16 @@
 *.ilg
 *.ind
 *.out
-# lists/tables of contents
+*.gz
+*.xml
+minted_package_cache/*
+
+# Contents
 *.loe
 *.lof
 *.lol
 *.toc
 *.lot
-minted_package_cache/*
 
-*.gz
-*.xml
-
-# ignore results
+# Product
 *.pdf
-
