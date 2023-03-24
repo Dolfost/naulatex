@@ -27,3 +27,4 @@ minted_package_cache/*
 
 # Product
 *.pdf
+images/*
