@@ -18,6 +18,9 @@
 *.xml
 minted_package_cache/*
 
+# Vim
+*.swp
+
 # Contents
 *.loe
 *.lof
