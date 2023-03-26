@@ -7,18 +7,18 @@
 
 \usepackage{geometry}
 \geometry{
-	paper=a4paper,
-	inner=2cm, outer=2cm, top=2cm, bottom=2cm, 
-	bindingoffset=0cm, 
-	textwidth=\textwidth, textheight=\textheight, 
-	includehead=false, includefoot=false, portrait, twoside}
+    paper=a4paper,
+    inner=2cm, outer=2cm, top=2cm, bottom=2cm, 
+    bindingoffset=0cm, 
+    textwidth=\textwidth, textheight=\textheight, 
+    includehead=false, includefoot=false, portrait, twoside}
 \usepackage{layouts}
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{blindtext}
 
 
-%\usepackage{parskip} 									% remove the paragraph indentation
+%\usepackage{parskip}   % remove the paragraph indentation
 
 
 \usepackage{amsmath}
@@ -27,13 +27,13 @@
 \usepackage{amsthm}
 \usepackage{thmtools}
 \declaretheoremstyle[
-notefont=\normalfont\sffamily, notebraces={}{},
-headfont=\bfseries\itshape,
-bodyfont=\normalfont\itshape,
-headformat=\NAME\ \NUMBER \NOTE,
-headpunct=\sffamily.\\,
-spaceabove=2mm, spacebelow=2mm,
-postheadspace=0mm, headindent=3mm,
+    notefont=\normalfont\sffamily, notebraces={}{},
+    headfont=\bfseries\itshape,
+    bodyfont=\normalfont\itshape,
+    headformat=\NAME\ \NUMBER \NOTE,
+    headpunct=\sffamily.\\,
+    spaceabove=2mm, spacebelow=2mm,
+    postheadspace=0mm, headindent=3mm,
 ]{thmstyle}
 \declaretheorem[style=thmstyle, numberwithin=section, name=Теорема]{thm}
 \declaretheorem[style=thmstyle, numberwithin=section, name=Означення]{dfn}
@@ -115,27 +115,27 @@ postheadspace=0mm, headindent=3mm,
 \usepackage{xifthen}
 \newif\iffigures
 \AtBeginEnvironment{figure}{%
-	\iffigures\else\global\figurestrue\fi
+    \iffigures\else\global\figurestrue\fi
 }
 \newif\iftables
 \AtBeginEnvironment{table}{%
-	\iftables\else\global\tablestrue\fi
+    \iftables\else\global\tablestrue\fi
 }
 \AtBeginEnvironment{longtable}{%
-	\iftables\else\global\tablestrue\fi
+    \iftables\else\global\tablestrue\fi
 }
 
 \newif\iflistings
 \AtBeginEnvironment{listing}{%
-	\iflistings\else\global\listingstrue\fi
+    \iflistings\else\global\listingstrue\fi
 }
 \newif\iftheorems
 \AtBeginEnvironment{thm}{%
-	\iftheorems\else\global\theoremstrue\fi
+    \iftheorems\else\global\theoremstrue\fi
 }
 \newif\ifdefenitions
 \AtBeginEnvironment{dfn}{%
-\ifdefenitions\else\global\defenitionstrue\fi
+    \ifdefenitions\else\global\defenitionstrue\fi
 }
 
 
@@ -150,29 +150,29 @@ postheadspace=0mm, headindent=3mm,
 \usepackage[]{hyperref}
 \definecolor{linkcolorus}{RGB}{80,80,80}
 \hypersetup{
-	colorlinks=true,
-	linkcolor=linkcolorus,
-	raiselinks=true,
-	backref=true,
-	pdfview=XYZ,
-	pdfviewarea=TrimBox,
-	linktocpage=true,
-	anchorcolor=black,
-	citecolor=green,
-	filecolor=cyan,
-	urlcolor=magenta,
-	frenchlinks=false, % Uses small caps for links instead of color
-	bookmarks=true, % Writes bookmarks for the Acrobat Reader
-	bookmarksopen=false % Shows all bookmarks in an expanded view
-	bookmarksnumbered=false % Includes the section number in bookmarks
-	pdfstartpage=1 % Specifies which page would be shown when the PDF file is opened
+    colorlinks=true,
+    linkcolor=linkcolorus,
+    raiselinks=true,
+    backref=true,
+    pdfview=XYZ,
+    pdfviewarea=TrimBox,
+    linktocpage=true,
+    anchorcolor=black,
+    citecolor=green,
+    filecolor=cyan,
+    urlcolor=magenta,
+    frenchlinks=false, % Uses small caps for links instead of color
+    bookmarks=true, % Writes bookmarks for the Acrobat Reader
+    bookmarksopen=false % Shows all bookmarks in an expanded view
+    bookmarksnumbered=false % Includes the section number in bookmarks
+    pdfstartpage=1 % Specifies which page would be shown when the PDF file is opened
 }
 \hypersetup{
-	pdfauthor={\studentname},
-	pdfcreator={Created with LaTex by \studentname},
-	pdftitle={\prodname},
-	pdfsubject={},
-	pdfkeywords={equations,mathematics,programming}
+    pdfauthor={\studentname},
+    pdfcreator={Created with LaTex by \studentname},
+    pdftitle={\prodname},
+    pdfsubject={},
+    pdfkeywords={equations,mathematics,programming}
 }
 \usepackage{cleveref}
 \crefname{figure}{рис.}{рис.}
@@ -203,6 +203,6 @@ postheadspace=0mm, headindent=3mm,
 \frenchspacing
 
 
-%%% 			Preamble made by Vladyslav Rehan			  %%%
-% 	https://tex.stackexchange.com/users/283011/vladyslav-rehan	%
-% 	https://github.com/Dolfost									%
+%%%%                Preamble is made by Vladyslav Rehan                %%%%
+%       https://tex.stackexchange.com/users/283011/vladyslav-rehan        %
+%                       https://github.com/Dolfost%                       %
