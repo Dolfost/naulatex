@@ -20,6 +20,7 @@ minted_package_cache/*
 
 # Vim
 *.swp
+/tags
 
 # Contents
 *.loe
