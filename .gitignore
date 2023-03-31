@@ -21,6 +21,9 @@ minted_package_cache/*
 # Vim
 *.swp
 /tags
+/tags.lock
+
+# Help scripts
 
 # Contents
 *.loe
