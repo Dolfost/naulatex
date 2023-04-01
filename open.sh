@@ -1,12 +1,14 @@
 #!/bin/bash
 
-if [ "$#" -gt 1 ]; then
-    path=$1
-	echo $(rt $1 -d '\n') >> subject.txt
+subjectpath="data/subject.txt"
+
+if [[ $# -ge 1 ]]; then
+	path=$1
+	echo $1 >> $subjectpath
 else
-    path=$(cat subject.txt | tr -d '\n')
+    path=$(cat $subjectpath | tr -d "\n")
 fi
 
 # nvim -p 1 "setup/$path/body.tex" -p 1 preamble/preamble.tex -p 1 -O 1 homework.tex -o 1 setup.tex variables/variables.tex
 
-nvim -S data/open.txt setup/$path/body.tex preamble/preamble.tex setup.tex homework.tex variables/variables.tex se
+nvim setup/$path/body.tex  -c 'tabe preamble/preamble.tex'  -c 'tabe setup.tex' -c 'vsplit homework.tex' -c 'split variables/variables.tex'

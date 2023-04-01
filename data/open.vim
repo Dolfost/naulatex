@@ -1,4 +1,0 @@
-:tabe
-:tabe
-:vsplit
-:split

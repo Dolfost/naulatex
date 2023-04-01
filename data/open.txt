@@ -1,6 +1,0 @@
-
-"setup/$path/body.tex"
-tabe preamble/preamble.tex
-tabe homework.tex
-vsplit setup.tex
-split variables/variables.tex
