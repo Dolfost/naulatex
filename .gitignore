@@ -24,6 +24,7 @@ minted_package_cache/*
 /tags.lock
 
 # Help scripts
+data/subject.txt
 
 # Contents
 *.loe
