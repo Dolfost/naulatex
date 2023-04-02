@@ -5,5 +5,5 @@ git clone "$url" "./$1/LaTex"
 subjectpath="data/subject.txt"
 
 if [[ $# -ge 2 ]]; then
-	echo $2 >> "./$1/LaTex/$subjectpath"
+	echo $2 > "./$1/LaTex/$subjectpath"
 fi

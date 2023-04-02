@@ -4,7 +4,7 @@ subjectpath="data/subject.txt"
 
 if [[ $# -ge 1 ]]; then
 	path=$1
-	echo $1 >> $subjectpath
+	echo $1 > $subjectpath
 else
     path=$(cat $subjectpath | tr -d "\n")
 fi
