@@ -13,6 +13,7 @@
 *.idx
 *.ilg
 *.ind
+*.pyg
 *.out
 *.gz
 *.xml
