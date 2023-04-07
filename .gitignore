@@ -27,6 +27,9 @@ minted_package_cache/*
 # Help scripts
 data/subject.txt
 
+# drawio
+*.bkp
+
 # Contents
 *.loe
 *.lof
