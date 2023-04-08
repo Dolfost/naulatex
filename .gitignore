@@ -19,10 +19,10 @@
 *.xml
 minted_package_cache/*
 
-# Vim
+# nvim
 *.swp
-/tags
-/tags.lock
+tags
+tags.lock
 
 # Help scripts
 data/subject.txt
@@ -40,3 +40,4 @@ data/subject.txt
 # Product
 *.pdf
 images/*
+!/images/.gitkeep
