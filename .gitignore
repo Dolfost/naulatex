@@ -39,5 +39,4 @@ data/subject.txt
 
 # Product
 *.pdf
-images/*
 !/images/.gitkeep
