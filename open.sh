@@ -11,4 +11,4 @@ fi
 
 # nvim -p 1 "setup/$path/body.tex" -p 1 preamble/preamble.tex -p 1 -O 1 homework.tex -o 1 setup.tex variables/variables.tex
 
-nvim setup/$path/body.tex  -c 'tabe preamble/preamble.tex'  -c 'tabe setup.tex' -c 'vsplit homework.tex' -c 'split variables/variables.tex'
+nvim setup/$path/body.tex  -c 'tabe preamble/preamble.tex'  -c 'tabe commands/commands.tex' -c 'tabe setup.tex' -c 'vsplit homework.tex' -c 'split variables/variables.tex'
