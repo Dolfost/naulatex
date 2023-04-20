@@ -7,3 +7,5 @@ subjectpath="data/subject.txt"
 if [[ $# -ge 2 ]]; then
 	echo $2 > "./$1/LaTex/$subjectpath"
 fi
+
+cd "./$1/LaTex"
