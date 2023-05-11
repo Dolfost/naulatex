@@ -26,9 +26,9 @@
 \usepackage{amsthm}
 \usepackage{thmtools}
 \declaretheoremstyle[
-notefont=\normalfont\sffamily, notebraces={}{},
-headfont=\bfseries\itshape,
-bodyfont=\normalfont\itshape,
+notefont=\normalfont\itshape, notebraces={}{},
+headfont=\bfseries\sffamily,
+bodyfont=\normalfont,
 headformat=\NAME\ \NUMBER \NOTE,
 headpunct=\sffamily.\\,
 spaceabove=2mm, spacebelow=2mm,
@@ -40,7 +40,7 @@ postheadspace=0mm, headindent=3mm,
 \usepackage{amssymb}
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs=false}
-\usepackage{esvect}
+\usepackage{esvect} % \vv{n} gives the n vector
 
 
 \usepackage{array}
@@ -97,7 +97,7 @@ postheadspace=0mm, headindent=3mm,
 \setitemize[3]{label=\(\vartriangleleft\)}
 \setenumerate{label=\textcircled{\scriptsize\Alph*}, font=\sffamily, align=right, start=1}
 \setenumerate[2]{label=\textcircled{\scriptsize\arabic*}}
-\setdescription{font=\bfseries, align=left}
+\setdescription{style = nextline, font=\bfseries, align=left}
 \setdescription[2]{font=\itshape}
 
 
