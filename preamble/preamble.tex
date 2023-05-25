@@ -84,10 +84,11 @@ postheadspace=0mm, headindent=3mm,
 
 \usepackage{tcolorbox}
 \usepackage[cachedir=minted_package_cache]{minted}
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
 \usemintedstyle{tango}
 \setminted{numbers=none, autogobble, breaklines, bgcolor=CodeBg, frame=bottomline, framerule=0.4pt, framesep=0.1mm,  highlightcolor=LimeGreen, curlyquotes=true, mathescape}
 \BeforeBeginEnvironment{minted}{}
-\AfterEndEnvironment{minted}{}
+\AfterEndEnvironment{minted}{\vspace{-0.7cm}}
 %\newminted{cpp}{linenos,autogobble,breaklines, bgcolor=white}
 
 \usepackage{enumitem}
