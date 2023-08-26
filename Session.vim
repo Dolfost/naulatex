@@ -20,12 +20,13 @@ badd +1 matter/frontmatter.tex
 badd +1 commands/commands.tex
 badd +6 setup.tex
 badd +1 subjects/amp/mod/body.tex
-badd +3 subjects/amp/mod/setup.tex
+badd +9 subjects/amp/mod/setup.tex
 badd +0 term://~/LaTeX//10791:/bin/zsh
 badd +0 variables/texvariables.tex
 badd +0 variables/variables.tex
 argglobal
 %argdel
+tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
@@ -51,50 +52,10 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
-normal! 024|
+normal! 04|
 tabnext
-edit subjects/amp/mod/setup.tex
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 88 + 70) / 140)
-exe 'vert 2resize ' . ((&columns * 51 + 70) / 140)
+edit setup.tex
 argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 31) / 62)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 040|
-wincmd w
-argglobal
-if bufexists(fnamemodify("setup.tex", ":p")) | buffer setup.tex | else | edit setup.tex | endif
-if &buftype ==# 'terminal'
-  silent file setup.tex
-endif
 balt subjects/amp/mod/setup.tex
 setlocal fdm=manual
 setlocal fde=0
@@ -112,9 +73,26 @@ keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 026|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 88 + 70) / 140)
-exe 'vert 2resize ' . ((&columns * 51 + 70) / 140)
+tabnext
+edit subjects/amp/mod/setup.tex
+argglobal
+balt setup.tex
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 9 - ((8 * winheight(0) + 31) / 62)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 9
+normal! 045|
 tabnext
 edit preamble/preamble.tex
 argglobal
@@ -128,11 +106,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 66 - ((51 * winheight(0) + 31) / 62)
+let s:l = 127 - ((8 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 66
+keepjumps 127
 normal! 0
 tabnext
 edit matter/frontmatter.tex
@@ -156,11 +134,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 31 + 32) / 65)
-exe 'vert 1resize ' . ((&columns * 89 + 70) / 140)
-exe '2resize ' . ((&lines * 30 + 32) / 65)
-exe 'vert 2resize ' . ((&columns * 89 + 70) / 140)
-exe 'vert 3resize ' . ((&columns * 50 + 70) / 140)
+wincmd =
 argglobal
 balt matter/backmatter.tex
 setlocal fdm=manual
@@ -196,12 +170,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 15) / 30)
+let s:l = 19 - ((9 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 0
+keepjumps 19
+normal! 07|
 wincmd w
 argglobal
 if bufexists(fnamemodify("document.tex", ":p")) | buffer document.tex | else | edit document.tex | endif
@@ -219,18 +193,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((17 * winheight(0) + 31) / 62)
+let s:l = 12 - ((11 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
-normal! 06|
+keepjumps 12
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 31 + 32) / 65)
-exe 'vert 1resize ' . ((&columns * 89 + 70) / 140)
-exe '2resize ' . ((&lines * 30 + 32) / 65)
-exe 'vert 2resize ' . ((&columns * 89 + 70) / 140)
-exe 'vert 3resize ' . ((&columns * 50 + 70) / 140)
+wincmd =
 tabnext
 edit variables/variables.tex
 let s:save_splitbelow = &splitbelow
@@ -249,8 +219,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 70 + 70) / 140)
-exe 'vert 2resize ' . ((&columns * 69 + 70) / 140)
+wincmd =
 argglobal
 balt variables/texvariables.tex
 setlocal fdm=manual
@@ -263,12 +232,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 31) / 62)
+let s:l = 16 - ((15 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 050|
+keepjumps 16
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("variables/texvariables.tex", ":p")) | buffer variables/texvariables.tex | else | edit variables/texvariables.tex | endif
@@ -286,15 +255,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 20 - ((19 * winheight(0) + 31) / 62)
+let s:l = 13 - ((12 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 20
-normal! 046|
+keepjumps 13
+normal! 017|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 70 + 70) / 140)
-exe 'vert 2resize ' . ((&columns * 69 + 70) / 140)
+wincmd =
 tabnext
 edit commands/commands.tex
 argglobal
@@ -309,12 +277,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 31) / 62)
+let s:l = 1 - ((0 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
-normal! 037|
+keepjumps 1
+normal! 058|
 tabnext
 argglobal
 if bufexists(fnamemodify("term://~/LaTeX//10791:/bin/zsh", ":p")) | buffer term://~/LaTeX//10791:/bin/zsh | else | edit term://~/LaTeX//10791:/bin/zsh | endif
@@ -330,13 +298,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 232 - ((61 * winheight(0) + 31) / 62)
+let s:l = 449 - ((61 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 232
+keepjumps 449
 normal! 010|
-tabnext 7
+tabnext 8
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
