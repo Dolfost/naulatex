@@ -21,9 +21,9 @@ badd +1 commands/commands.tex
 badd +6 setup.tex
 badd +1 subjects/amp/mod/body.tex
 badd +9 subjects/amp/mod/setup.tex
-badd +0 term://~/LaTeX//10791:/bin/zsh
-badd +0 variables/texvariables.tex
-badd +0 variables/variables.tex
+badd +1 term://~/LaTeX//10791:/bin/zsh
+badd +1 variables/texvariables.tex
+badd +1 variables/variables.tex
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -134,7 +134,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
+exe '1resize ' . ((&lines * 31 + 32) / 65)
+exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
+exe '2resize ' . ((&lines * 30 + 32) / 65)
+exe 'vert 2resize ' . ((&columns * 114 + 114) / 228)
+exe 'vert 3resize ' . ((&columns * 113 + 114) / 228)
 argglobal
 balt matter/backmatter.tex
 setlocal fdm=manual
@@ -170,7 +174,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((9 * winheight(0) + 9) / 19)
+let s:l = 19 - ((14 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -193,14 +197,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 25) / 51)
+let s:l = 12 - ((11 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 12
 normal! 0
 wincmd w
-wincmd =
+exe '1resize ' . ((&lines * 31 + 32) / 65)
+exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
+exe '2resize ' . ((&lines * 30 + 32) / 65)
+exe 'vert 2resize ' . ((&columns * 114 + 114) / 228)
+exe 'vert 3resize ' . ((&columns * 113 + 114) / 228)
 tabnext
 edit variables/variables.tex
 let s:save_splitbelow = &splitbelow
@@ -219,7 +227,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
+exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
+exe 'vert 2resize ' . ((&columns * 113 + 114) / 228)
 argglobal
 balt variables/texvariables.tex
 setlocal fdm=manual
@@ -262,7 +271,8 @@ normal! zt
 keepjumps 13
 normal! 017|
 wincmd w
-wincmd =
+exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
+exe 'vert 2resize ' . ((&columns * 113 + 114) / 228)
 tabnext
 edit commands/commands.tex
 argglobal
@@ -298,13 +308,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 468 - ((61 * winheight(0) + 31) / 62)
+let s:l = 3 - ((2 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 468
+keepjumps 3
 normal! 010|
-tabnext 1
+tabnext 8
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
