@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/LaTeX
+cd ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 preamble/preamble.tex
+badd +127 preamble/preamble.tex
 badd +1 document.tex
 badd +1 matter/backmatter.tex
 badd +1 matter/frontmatter.tex
@@ -24,6 +24,10 @@ badd +9 subjects/amp/mod/setup.tex
 badd +1 term://~/LaTeX//10791:/bin/zsh
 badd +1 variables/texvariables.tex
 badd +1 variables/variables.tex
+badd +1 subjects/objecto/lab/body.tex
+badd +9 subjects/objecto/lab/setup.tex
+badd +1 preamble
+badd +0 ~/Lib/NAU/Algoritmic_languages_and_programing/Labs/Sem_2/Lab_2/LaTex/setup/amp/lab/body.tex
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -34,9 +38,9 @@ tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit subjects/amp/mod/body.tex
+edit subjects/objecto/lab/body.tex
 argglobal
-balt subjects/amp/mod/setup.tex
+balt subjects/amp/mod/body.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -47,11 +51,62 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 31) / 62)
+let s:l = 20 - ((19 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 20
+normal! 068|
+tabnext
+edit ~/Lib/NAU/Algoritmic_languages_and_programing/Labs/Sem_2/Lab_2/LaTex/setup/amp/lab/body.tex
+argglobal
+balt subjects/objecto/lab/body.tex
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 154 - ((37 * winheight(0) + 31) / 62)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 154
+normal! 0
+tabnext
+edit document.tex
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 19 - ((18 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 19
 normal! 04|
 tabnext
 edit setup.tex
@@ -67,32 +122,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 31) / 62)
+let s:l = 3 - ((2 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 026|
-tabnext
-edit subjects/amp/mod/setup.tex
-argglobal
-balt setup.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 31) / 62)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 9
-normal! 045|
+keepjumps 3
+normal! 025|
 tabnext
 edit preamble/preamble.tex
 argglobal
@@ -106,14 +141,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 127 - ((8 * winheight(0) + 31) / 62)
+let s:l = 127 - ((30 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 127
 normal! 0
+lcd ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX
 tabnext
-edit matter/frontmatter.tex
+edit ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/frontmatter.tex
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -134,13 +170,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 31 + 32) / 65)
-exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
-exe '2resize ' . ((&lines * 30 + 32) / 65)
-exe 'vert 2resize ' . ((&columns * 114 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 113 + 114) / 228)
+wincmd =
 argglobal
-balt matter/backmatter.tex
+balt ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/backmatter.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -151,19 +183,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 9 - ((8 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 019|
+keepjumps 9
+normal! 044|
 wincmd w
 argglobal
-if bufexists(fnamemodify("matter/backmatter.tex", ":p")) | buffer matter/backmatter.tex | else | edit matter/backmatter.tex | endif
+if bufexists(fnamemodify("~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/backmatter.tex", ":p")) | buffer ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/backmatter.tex | else | edit ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/backmatter.tex | endif
 if &buftype ==# 'terminal'
-  silent file matter/backmatter.tex
+  silent file ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/backmatter.tex
 endif
-balt matter/frontmatter.tex
+balt ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/frontmatter.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -182,11 +214,11 @@ keepjumps 19
 normal! 07|
 wincmd w
 argglobal
-if bufexists(fnamemodify("document.tex", ":p")) | buffer document.tex | else | edit document.tex | endif
+if bufexists(fnamemodify("~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/document.tex", ":p")) | buffer ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/document.tex | else | edit ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/document.tex | endif
 if &buftype ==# 'terminal'
-  silent file document.tex
+  silent file ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/document.tex
 endif
-balt matter/backmatter.tex
+balt ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/backmatter.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -197,20 +229,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 31) / 62)
+let s:l = 19 - ((18 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 12
-normal! 0
+keepjumps 19
+normal! 013|
 wincmd w
-exe '1resize ' . ((&lines * 31 + 32) / 65)
-exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
-exe '2resize ' . ((&lines * 30 + 32) / 65)
-exe 'vert 2resize ' . ((&columns * 114 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 113 + 114) / 228)
+wincmd =
 tabnext
-edit variables/variables.tex
+edit ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/variables/variables.tex
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -227,10 +255,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 113 + 114) / 228)
+wincmd =
 argglobal
-balt variables/texvariables.tex
+balt ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/variables/texvariables.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -241,19 +268,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((15 * winheight(0) + 31) / 62)
+let s:l = 4 - ((3 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 0
+keepjumps 4
+normal! 030|
 wincmd w
 argglobal
-if bufexists(fnamemodify("variables/texvariables.tex", ":p")) | buffer variables/texvariables.tex | else | edit variables/texvariables.tex | endif
+if bufexists(fnamemodify("~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/variables/texvariables.tex", ":p")) | buffer ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/variables/texvariables.tex | else | edit ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/variables/texvariables.tex | endif
 if &buftype ==# 'terminal'
-  silent file variables/texvariables.tex
+  silent file ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/variables/texvariables.tex
 endif
-balt setup.tex
+balt ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/setup.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -264,19 +291,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 13 - ((12 * winheight(0) + 31) / 62)
+let s:l = 19 - ((18 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
-normal! 017|
+keepjumps 19
+normal! 08|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 114 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 113 + 114) / 228)
+wincmd =
 tabnext
-edit commands/commands.tex
+edit ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/commands/commands.tex
 argglobal
-balt matter/frontmatter.tex
+balt ~/Lib/NAU/Object_orinented_programing/Labs/Lab1/LaTeX/matter/frontmatter.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -293,28 +319,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 058|
-tabnext
-argglobal
-if bufexists(fnamemodify("term://~/LaTeX//10791:/bin/zsh", ":p")) | buffer term://~/LaTeX//10791:/bin/zsh | else | edit term://~/LaTeX//10791:/bin/zsh | endif
-if &buftype ==# 'terminal'
-  silent file term://~/LaTeX//10791:/bin/zsh
-endif
-balt commands/commands.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 3 - ((2 * winheight(0) + 31) / 62)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 3
-normal! 010|
-tabnext 8
+tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
