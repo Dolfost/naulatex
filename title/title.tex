@@ -1,3 +1,4 @@
+%!TeX = ../../document.txt
 \thispagestyle{empty}
 { \sffamily
 \begin{center}
@@ -6,23 +7,43 @@
 	\Large{\faculty}\\
 	\Large{\department}
 \end{center}
+
 \vspace*{\fill}
+
 \begin{center}
-	\rule[-1mm]{0.3\textwidth}{0.25mm}\\
+	% \rule[-1mm]{0.3\textwidth}{0.25mm}\\
 	\Large
 	``\subjectname''\\
 	\prodname\ \prodnumber\\
 	\proddate\\
-	\rule[4.5mm]{0.2\textwidth}{0.25mm}
+	% \rule[4.5mm]{0.2\textwidth}{0.25mm}
 \end{center}
 \vspace*{\fill}
-\begin{center}
-	\large
-	\prodnamef\ виконав\\
-	студент №\studentnumber\ группи \shortdepartment\ \groupnumber\ \shortuniversity\\
-	\studentname,\\
-	Викладач: \teacher 
-\end{center}
+\begin{adjustwidth}{\textwidth/2}{0pt}
+	\begin{flushleft}
+		\large
+		Виконав:\\
+		студент №\studentnumber\ групи \shortdepartment\ \groupnumber\ \shortuniversity\\
+		\studentname\\
+	\end{flushleft}
+\end{adjustwidth}
+
+\vspace{1cm}
+
+\begin{adjustwidth}{\textwidth/2}{0pt}
+	\begin{flushleft}
+		\large
+		Прийняв:\\
+		\teacher
+	\end{flushleft}
+\end{adjustwidth}
 }
+
+\vspace*{\fill}
+
+\begin{center}
+	Київ \the\year
+\end{center}
+
 \phantomsection
 \newpage
