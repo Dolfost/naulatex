@@ -1,5 +1,9 @@
-%!TeX = ../../document.txt
+%!TeX = ../../document.tex
+
+\newcommand{\rightshift}{35pt}
+
 \thispagestyle{empty}
+
 { \sffamily
 \begin{center}
 	\LARGE{МНІСТЕРСТВО НАУКИ ТА ОСВІТИ УКРАЇНИ}\\
@@ -19,7 +23,7 @@
 	% \rule[4.5mm]{0.2\textwidth}{0.25mm}
 \end{center}
 \vspace*{\fill}
-\begin{adjustwidth}{\textwidth/2}{0pt}
+\begin{adjustwidth}{\textwidth/2+\rightshift}{0pt}
 	\begin{flushleft}
 		\large
 		Виконав:\\
@@ -30,11 +34,11 @@
 
 \vspace{1cm}
 
-\begin{adjustwidth}{\textwidth/2}{0pt}
+\begin{adjustwidth}{\textwidth/2+\rightshift}{0pt}
 	\begin{flushleft}
 		\large
 		Прийняв:\\
-		\teacher
+		\teacher{}
 	\end{flushleft}
 \end{adjustwidth}
 }
@@ -42,8 +46,8 @@
 \vspace*{\fill}
 
 \begin{center}
-	Київ \the\year
+	Київ \the\year{}
 \end{center}
 
-\phantomsection
+\phantomsection{}
 \newpage
