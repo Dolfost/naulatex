@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Lib/NAU/Algorithms_and_data_structures/Labs/Lab1/LaTeX
+cd ~/Lib/NAU/Object_orinented_programing/Labs/Mod_1/Lab2/LaTeX
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,21 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +49 preamble/preamble.tex
-badd +19 document.tex
-badd +1 matter/backmatter.tex
-badd +1 matter/frontmatter.tex
-badd +1 commands/commands.tex
-badd +6 setup.tex
-badd +1 subjects/amp/mod/body.tex
-badd +9 subjects/amp/mod/setup.tex
-badd +1 variables/texvariables.tex
+badd +1 subjects/objecto/lab/body.tex
+badd +1 document.tex
+badd +1 setup.tex
+badd +1 preamble/preamble.tex
 badd +1 variables/variables.tex
-badd +1 subjects/ads/lab/body.tex
-badd +6 subjects/ads/lab/setup.tex
-badd +1 title/title.tex
-badd +1 subjects/amp/bibliography.bib
-badd +1 subjects/ads/bibliography.bib
+badd +1 variables/texvariables.tex
+badd +1 subjects/objecto/bibliography.bib
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -35,24 +27,8 @@ tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit subjects/ads/lab/body.tex
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit subjects/objecto/lab/body.tex
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -64,16 +40,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 266 - ((26 * winheight(0) + 28) / 57)
+let s:l = 70 - ((15 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 266
-normal! 0103|
+keepjumps 70
+normal! 0175|
 tabnext
-edit subjects/ads/bibliography.bib
+edit subjects/objecto/bibliography.bib
 argglobal
-balt subjects/amp/bibliography.bib
+balt subjects/objecto/lab/body.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -84,46 +60,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 34) / 68)
+let s:l = 48 - ((43 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0234|
+keepjumps 48
+normal! 062|
 tabnext
-edit document.tex
-argglobal
-balt subjects/ads/lab/body.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 17 - ((16 * winheight(0) + 34) / 68)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 17
-normal! 0
-tabnext
-edit preamble/preamble.tex
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit setup.tex
 argglobal
 balt document.tex
 setlocal fdm=manual
@@ -136,36 +80,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 62 - ((20 * winheight(0) + 28) / 57)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 62
-normal! 076|
-tabnext
-edit setup.tex
-argglobal
-balt subjects/amp/mod/setup.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 34) / 68)
+let s:l = 4 - ((3 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 4
 normal! 026|
 tabnext
-edit commands/commands.tex
+edit document.tex
 argglobal
-balt setup.tex
+balt subjects/objecto/lab/body.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -176,16 +100,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((17 * winheight(0) + 34) / 68)
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
+keepjumps 1
 normal! 0
 tabnext
-edit subjects/ads/lab/setup.tex
+edit preamble/preamble.tex
 argglobal
-balt setup.tex
+balt document.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -196,34 +120,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 34) / 68)
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 042|
+keepjumps 1
+normal! 0
 tabnext
-edit title/title.tex
-argglobal
-balt preamble/preamble.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 28 - ((27 * winheight(0) + 34) / 68)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 28
-normal! 010|
-tabnext
-edit matter/frontmatter.tex
+edit variables/texvariables.tex
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -240,93 +144,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
 argglobal
-balt matter/backmatter.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 34) / 68)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 9
-normal! 0
-wincmd w
-argglobal
-if bufexists(fnamemodify("matter/backmatter.tex", ":p")) | buffer matter/backmatter.tex | else | edit matter/backmatter.tex | endif
-if &buftype ==# 'terminal'
-  silent file matter/backmatter.tex
-endif
-balt matter/frontmatter.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 34) / 68)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-wincmd =
-tabnext
-edit variables/variables.tex
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-wincmd =
-argglobal
-balt variables/texvariables.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 34) / 68)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 056|
-wincmd w
-argglobal
-if bufexists(fnamemodify("variables/texvariables.tex", ":p")) | buffer variables/texvariables.tex | else | edit variables/texvariables.tex | endif
-if &buftype ==# 'terminal'
-  silent file variables/texvariables.tex
-endif
 balt variables/variables.tex
 setlocal fdm=manual
 setlocal fde=0
@@ -338,14 +156,36 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 34) / 68)
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-wincmd =
+argglobal
+if bufexists(fnamemodify("variables/variables.tex", ":p")) | buffer variables/variables.tex | else | edit variables/variables.tex | endif
+if &buftype ==# 'terminal'
+  silent file variables/variables.tex
+endif
+balt variables/texvariables.tex
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+wincmd w
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
