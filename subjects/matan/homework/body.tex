@@ -1,10 +1,55 @@
-% !TeX root = ../../../homework.tex
+% !TeX root = ../../../document.tex
 \nocite{*}
-\section{}
-
+\section{Знайти суму ряду за означенням}
 \begin{gather}
-1	
+	\sum_{n=1}^\infty\frac{7}{49n^2+7n-12} \label{eq:1}
 \end{gather}
 
 \solving
 
+Необхідна умова збіжності виконується:
+\begin{gather}
+	\lim_{n\to\infty} \frac{7}{49n^2+7n-12} \equiv 0
+\end{gather}
+Розкладемо \(f(x) = \frac{7}{49n^2+7n-12}\) на елементарні дроби:
+\begin{gather}
+	49n^2+7n-12=0,\ D=49+2352 = 2401,\\
+	x_1=\frac{-7+\sqrt{2401}}{98}=\frac{3}{7},\ x_2=\frac{-7-\sqrt{2401}}{98}=-\frac{4}{7},\\
+	f(x)=\frac{7}{(x-\frac{3}{7})(x+\frac{4}{7})} = \frac{A}{x-\frac{3}{7}}+\frac{B}{x+\frac{4}{7}},\\
+	A\left(x+\frac{4}{7}\right)+B\left(x-\frac{3}{7}\right)=7,\ x=-\frac{4}{7}\Rightarrow B= 7,\ x=\frac{3}{7}\Rightarrow A=7
+\end{gather}
+Маємо:
+\begin{gather}
+	f(x)=\frac{7}{x-\frac{3}{7}}+\frac{7}{x+\frac{4}{7}}\Rightarrow \sum_{n=1}^\infty f(x) = \sum_{n=1}^\infty \frac{7}{x-\frac{3}{7}}-\sum_{n=1}^\infty=\\
+	=\underbrace{\left(\frac{49}{4}+\underline{\frac{49}{11}+\frac{49}{18}+\dots}\right)}_{\sum_{n=1}^\infty \frac{7}{x-\frac{3}{7}}}-\underbrace{\left(\underline{\frac{49}{11}+\frac{49}{18}+\frac{49}{25}+\dots}\right)}_{\sum_{n=1}^\infty} = \frac{49}{4}.
+\end{gather}
+\ansver
+Сума ряду \ref{eq:1} рівна \(\frac{49}{9}\).
+
+\section{Дослідити на збіжність}
+Дослідити на збіжність знакододатний числовий ряд за ознаками порівняння
+\begin{gather}
+	\sum_{n=3}^\infty \frac{n+5}{(n^2)(n+2)} \label{eq:2}
+\end{gather}
+
+\begin{thm}[Гранична ознака порівняння]
+	\label{dfn:zbiz}
+	Нехай \(\sum_{n=1}^\infty u_n\) і \(\sum_{n=1}^\infty v_n\) -- ряди з додатними членами. Якщо існує скінченна, відмінна від нуля, границя
+	\begin{gather}
+		\lim_{n\to\infty}\frac{u_n}{v_n}=k\ (0<k<\infty)
+	\end{gather}
+	то вказані ряди одночасно збіжні або розбіжні.
+\end{thm}
+
+\solving
+Перетворимо підсумний вираз на еквівалентну функцію:
+\begin{gather}
+	\frac{n+5}{(n^2)(n+2)}\sim \frac{n}{n^3}\sim \frac{1}{n^2}
+\end{gather}
+Порівняємо отриману функцію з розбіжним гармонійним рядом \(\sum_{n=1}^\infty\frac{1}{n}\):
+\begin{gather}
+	\lim_{n\to\infty}\frac{\frac{1}{n}}{\frac{1}{n^2}}=\lim_{n\to\infty}n=\infty \label{eq:waht}
+\end{gather}
+За теоремою \ref{dfn:zbiz} з границі \ref{eq:waht} випливає що ряд \ref{eq:2} збіжний.
+\ansver
+Ряд \ref{eq:2} збіжний.
