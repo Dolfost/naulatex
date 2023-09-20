@@ -77,7 +77,7 @@ postheadspace=0mm, headindent=3mm,
 \renewcommand{\footrulewidth}{0mm}
 \fancyhead[L]{\scriptsize\sffamily\hyperlink{toc}{ПЕРЕЙТИ ДО ЗМІСТУ}}
 \fancyhead[RO,RE]{\sffamily\leftmark} 
-\fancyfoot[CE,CO]{\rule[0.18mm]{3cm}{0.1mm} .: {\ttfamily\bfseries\thepage}\ :. \rule[0.18mm]{3cm}{0.1mm}}
+\fancyfoot[CE,CO]{.: {\ttfamily\bfseries\thepage}\ :.}
 \fancyfoot[R]{\sffamily\shortfaculty}
 \fancyfoot[L]{\sffamily\shortdepartment\ \shortuniversity}
 \pagestyle{fancy}
@@ -94,7 +94,7 @@ postheadspace=0mm, headindent=3mm,
 
 \usepackage{enumitem}
 \setlist{noitemsep, itemsep=0.6mm, topsep=0.3cm, labelsep=2mm}%, nolistsep}
-\setitemize{label=\(\mathbin{\Diamond}\), font=\ttfamily, align=right}
+\setitemize{label=\textbullet, font=\ttfamily, align=right}
 \setitemize[2]{label=\textopenbullet}
 \setitemize[3]{label=\(\vartriangleleft\)}
 \setenumerate{label=\textcircled{\scriptsize\arabic*}, font=\sffamily, align=right, start=1}
