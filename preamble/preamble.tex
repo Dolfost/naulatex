@@ -88,16 +88,16 @@ postheadspace=0mm, headindent=3mm,
 \usepackage[cachedir=minted_package_cache]{minted}
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 \usemintedstyle{tango}
-\setminted{numbers=right, linenos=true, autogobble, breaklines, bgcolor=CodeBackground, frame=leftline, framerule=0.35pt, framesep=2mm, numbersep=1mm, highlightcolor=LimeGreen, curlyquotes=true, mathescape, stepnumber=1, fontsize=\footnotesize}
+\setminted{numbers=right, linenos=true, autogobble, breaklines, bgcolor=CodeBackground, frame=leftline, framerule=0.35pt, framesep=2mm, numbersep=1mm, highlightcolor=LimeGreen, curlyquotes=true, mathescape, stepnumber=1, fontsize=\footnotesize, xleftmargin=0cm}
 
 \usepackage{enumitem}
-\setlist{noitemsep, itemsep=0.6mm, topsep=0.3cm, labelsep=2mm}%, nolistsep}
+\setlist{noitemsep, itemsep=0.5mm, topsep=1mm, labelsep=2mm}%, nolistsep}
 \setlist[itemize,1]{label=\textbullet, font=\ttfamily, align=right}
 \setlist[itemize, 2]{label=\textopenbullet}
 \setlist[itemize, 3]{label=\(\vartriangleleft\)}
 \setlist[enumerate, 1]{label=\textcircled{\scriptsize\arabic*}, font=\sffamily, align=right, start=1}
 \setlist[enumerate, 2]{label=\textcircled{\scriptsize\Alph*}}
-\setlist[description, 1]{style=nextline, font=\mdseries, align=left}
+\setlist[description, 1]{itemsep=1mm, style=nextline, font=\mdseries, align=left}
 \setlist[description, 2]{style=nextline, font=\mdseries, align=left}
 
 
