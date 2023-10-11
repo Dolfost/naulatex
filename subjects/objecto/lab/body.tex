@@ -10,6 +10,46 @@
 	\item
 \end{itemize}
 
+\paragraph{Вимоги}
+Зразок вимог взятий з \cite{kulikov}. 
+\begin{description}
+	\item[Системні характеристики]\directenv
+		\begin{enumerate}
+			\item Програма має бути консольним додатком
+			\item Програма розробляється мовою програмування \code{C\#} 
+			\item Програма може бути кросс платформенною
+		\end{enumerate}
+	\item[Вимоги користувача]\directenv
+		\begin{enumerate}
+			\item Запуск і зупинка додатку (відбувається в терміналі)
+				\begin{description}
+					\item[Windows]
+						Запуск відбувається за допомогою префіксу відносного шляху \code{.\textbackslash}
+					\item[Unix-like]
+						Запуск відбувається за допомогою утиліти \code{mono}
+				\end{description}
+			\item Налаштування програми
+				\begin{enumerate}
+					\item Налаштування відбувається через передачу слів як аргументів командного рядка
+				\end{enumerate}
+			\item Перегляд журналу роботи
+				\begin{enumerate}
+					\item Журнал роботи не передбачений
+				\end{enumerate}
+		\end{enumerate}
+	\item[Атрибути якості]\directenv
+		\begin{enumerate}
+			\item Стійкість до вхідних даних
+				\begin{enumerate}
+					\item Неякісні вхідні дані не мають приводити до аварійного завершення програми
+				\end{enumerate}
+		\end{enumerate}
+	\item[Детальні специфікації]\directenv
+		\begin{enumerate}
+			\item Версія \code{dotnet framework} - 4.0
+		\end{enumerate}
+\end{description}
+
 \section{Теорія}
 \subsection{Про алгоритми}
 
