@@ -18,7 +18,7 @@
 \usepackage{blindtext}
 
 
-\usepackage{parskip}					% remove the paragraph indentation
+\usepackage{parskip} % remove the paragraph indentation
 
 
 \usepackage{textcomp}
@@ -70,7 +70,10 @@ postheadspace=0mm, headindent=3mm,
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{caption}
-\captionsetup{font=sf, labelfont=sf, margin=1cm, skip=2.5mm, labelsep=period}
+\captionsetup{font=sf, labelfont=sf, margin=1cm, skip=2.5mm, labelsep=period, figureposition=below,
+			  tableposition=above}
+\DeclareCaptionFormat{tableCaption}{{\hfill#1#2\\#3}}
+\captionsetup[table]{format=tableCaption, name={Таблиця}, labelsep=none}
 \usepackage{titlesec}
 \titleformat{\section}{\LARGE\normalfont\bfseries\sffamily}{\thesection.}{2.2mm}{}
 \titleformat{\subsection}{\Large\normalfont\bfseries\sffamily}{\thesubsection.}{2.2mm}{}
@@ -88,7 +91,7 @@ postheadspace=0mm, headindent=3mm,
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.18mm}
 \renewcommand{\footrulewidth}{0mm}
-\fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
+% \fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
 \fancyhead[RO,RE]{\sffamily\leftmark} 
 \fancyfoot[CE,CO]{.: {\ttfamily\bfseries\thepage}\ :.}
 \fancyfoot[R]{\sffamily\shortfaculty}
@@ -108,13 +111,20 @@ postheadspace=0mm, headindent=3mm,
 \setlist[itemize,1]{label=\textbullet, font=\ttfamily, align=right}
 \setlist[itemize, 2]{label=\textopenbullet}
 \setlist[itemize, 3]{label=\(\vartriangleleft\)}
-\setlist[enumerate, 1]{label=\textcircled{\scriptsize\arabic*}, font=\sffamily, align=right, start=1}
-\setlist[enumerate, 2]{label=\textcircled{\scriptsize\Alph*}}
-\setlist[enumerate, 3]{label=\textcircled{\scriptsize\Roman*}}
+% \setlist[enumerate, 1]{, align=right, start=1}
+% \setlist[enumerate, 2]{label=\textcircled{\scriptsize\Alph*}}
+% \setlist[enumerate, 3]{label=\textcircled{\scriptsize\Roman*}}
+\setlist[enumerate, 1]{label=\arabic*., font=\sffamily, align=right, start=1}
+\setlist[enumerate, 2]{label*=\arabic*.}
+\setlist[enumerate, 3]{label*=\arabic*.}
 \setlist[description, 1]{itemsep=3mm, style=nextline, font=\mdseries, align=left}
 \setlist[description, 2]{style=nextline, font=\mdseries, align=left}
 \newlist{steps}{enumerate}{1}
 \setlist[steps,1]{label={Крок \arabic*.}}
+\newlist{guiDescription}{enumerate}{3}
+\setlist[guiDescription, 1]{label={\tt\arabic*.}, ref={\tt\arabic*}, font=\sffamily, start=1}
+\setlist[guiDescription, 2]{label={\Alph*}}
+\setlist[guiDescription, 3]{label={\Roman*}}
 
 
 \usepackage{xspace}
