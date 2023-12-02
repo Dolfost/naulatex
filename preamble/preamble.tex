@@ -21,6 +21,9 @@
 \usepackage{parskip}					% remove the paragraph indentation
 
 
+\usepackage{textcomp}
+
+
 \usepackage[section]{placeins}
 
 
@@ -55,6 +58,8 @@ postheadspace=0mm, headindent=3mm,
 \usepackage{changepage}
 %\setlength{\abovetopsep}{1cm}
 \usepackage{multirow}
+
+
 \usepackage{tabularx}
 \usepackage{nicematrix}
 \NiceMatrixOptions{cell-space-top-limit=3pt}
@@ -83,7 +88,7 @@ postheadspace=0mm, headindent=3mm,
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.18mm}
 \renewcommand{\footrulewidth}{0mm}
-\fancyhead[L]{\scriptsize\sffamily\hyperlink{toc}{ПЕРЕЙТИ ДО ЗМІСТУ}}
+\fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
 \fancyhead[RO,RE]{\sffamily\leftmark} 
 \fancyfoot[CE,CO]{.: {\ttfamily\bfseries\thepage}\ :.}
 \fancyfoot[R]{\sffamily\shortfaculty}
@@ -99,14 +104,17 @@ postheadspace=0mm, headindent=3mm,
 \setminted{numbers=right, linenos=true, autogobble, breaklines, bgcolor=CodeBackground, frame=leftline, framerule=0.35pt, framesep=2mm, numbersep=1mm, highlightcolor=LimeGreen, curlyquotes=true, mathescape, stepnumber=1, fontsize=\footnotesize, xleftmargin=0cm}
 
 \usepackage{enumitem}
-\setlist{noitemsep, itemsep=0.5mm, topsep=1mm, labelsep=2mm}%, nolistsep}
+\setlist{noitemsep, itemsep=1mm, topsep=1mm, labelsep=2mm}%, nolistsep}
 \setlist[itemize,1]{label=\textbullet, font=\ttfamily, align=right}
 \setlist[itemize, 2]{label=\textopenbullet}
 \setlist[itemize, 3]{label=\(\vartriangleleft\)}
 \setlist[enumerate, 1]{label=\textcircled{\scriptsize\arabic*}, font=\sffamily, align=right, start=1}
 \setlist[enumerate, 2]{label=\textcircled{\scriptsize\Alph*}}
-\setlist[description, 1]{itemsep=1mm, style=nextline, font=\mdseries, align=left}
+\setlist[enumerate, 3]{label=\textcircled{\scriptsize\Roman*}}
+\setlist[description, 1]{itemsep=3mm, style=nextline, font=\mdseries, align=left}
 \setlist[description, 2]{style=nextline, font=\mdseries, align=left}
+\newlist{steps}{enumerate}{1}
+\setlist[steps,1]{label={Крок \arabic*.}}
 
 
 \usepackage{xspace}
@@ -146,8 +154,9 @@ postheadspace=0mm, headindent=3mm,
 }
 
 
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \addbibresource{\subjectpath/bibliography.bib}
+
 \usepackage{imakeidx}
 \indexsetup{firstpagestyle=fancy}
 \newcommand{\mainindex}[1]{{\bfseries #1}}
@@ -181,31 +190,31 @@ postheadspace=0mm, headindent=3mm,
 	pdfsubject={},
 	pdfkeywords={equations,mathematics,programming}
 }
-\usepackage{cleveref}
-\crefname{figure}{рис.}{рис.}
-\Crefname{figure}{Рис.}{Рис.}
-\crefname{table}{табл.}{табл.}
-\Crefname{table}{Табл.}{Табл.}
-\crefname{listing}{ліс.}{ліс.}
-\Crefname{listing}{Ліс.}{Ліс.}
+\usepackage[ukrainian]{cleveref}
+% \crefname{figure}{рис.}{рис.}
+% \Crefname{figure}{Рис.}{Рис.}
+% \crefname{table}{табл.}{табл.}
+% \Crefname{table}{Табл.}{Табл.}
+% \crefname{listing}{ліс.}{ліс.}
+% \Crefname{listing}{Ліс.}{Ліс.}
 
-\Crefname{section}{Розд.}{Розд.}
-\Crefname{section}{розд.}{розд.}
-\crefname{page}{стр.}{стр.}
+% \Crefname{section}{Розд.}{Розд.}
+% \Crefname{section}{розд.}{розд.}
+% \crefname{page}{стр.}{стр.}
 
-\crefname{equation}{вир.}{вир.}
-\Crefname{equation}{Вир.}{Вир.}
-\crefname{thm}{трм.}{трм.}
-\Crefname{thm}{Трм.}{Трм.}
-\crefname{dfn}{озн.}{озн.}
-\Crefname{dfn}{Озн.}{Озн.}
+% \crefname{equation}{вир.}{вир.}
+% \Crefname{equation}{Вир.}{Вир.}
+% \crefname{thm}{трм.}{трм.}
+% \Crefname{thm}{Трм.}{Трм.}
+% \crefname{dfn}{озн.}{озн.}
+% \Crefname{dfn}{Озн.}{Озн.}
+% \renewcommand{\crefandconjunction}{ і }
 \usepackage{nameref}
-
 
 \renewcommand{\footnoterule}
 {\noindent\smash{\rule[1.5mm]{0.5\textwidth}{0.3pt}}}
 
-\setcounter{tocdepth}{4}
+\setcounter{tocdepth}{5}
 
 \frenchspacing
 
