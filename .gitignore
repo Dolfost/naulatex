@@ -18,6 +18,8 @@
 *.gz
 *.xml
 minted_package_cache/*
+*.nav
+*.snm
 
 # nvim
 *.swp
