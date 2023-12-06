@@ -1,24 +1,23 @@
 % !TeX root = ../document.tex
-\documentclass[12pt]{article}
+\documentclass[14pt]{article}
 \usepackage[english, ukrainian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-
 \usepackage{geometry}
-\geometry{
+\geometry{%
 	paper=a4paper,
-	inner=2cm, outer=2cm, top=2cm, bottom=2cm, 
-	bindingoffset=0cm, 
+	inner=1cm, outer=1cm, top=2cm, bottom=2cm, 
+	bindingoffset=1.5cm, 
 	textwidth=\textwidth, textheight=\textheight, 
-	includehead=false, includefoot=false, portrait, twoside}
+	includehead=false, includefoot=false, portrait}
 \usepackage{layouts}
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{blindtext}
 
 
-\usepackage{parskip} % remove the paragraph indentation
+% \usepackage{parskip} % remove the paragraph indentation
 
 
 \usepackage{textcomp}
@@ -38,7 +37,7 @@
 notefont=\normalfont\itshape, notebraces={}{},
 headfont=\bfseries\sffamily,
 bodyfont=\normalfont,
-headformat=\NAME\ \NUMBER \NOTE,
+headformat=\NAME\ \NUMBER\ \NOTE,
 headpunct=\sffamily.\\,
 spaceabove=2mm, spacebelow=2mm,
 postheadspace=0mm, headindent=3mm,
@@ -80,11 +79,11 @@ postheadspace=0mm, headindent=3mm,
 \titleformat{\subsubsection}{\large\normalfont\bfseries\sffamily}{\thesubsubsection.}{2.2mm}{}
 \titleformat{\paragraph}{\large\normalfont\bfseries\sffamily}{}{}{}
 \titleformat{\subparagraph}{\normalsize\normalfont\bfseries\sffamily}{}{2mm}{}
-\titlespacing*{\section}{0mm}{5mm}{1mm}
-\titlespacing*{\subsection}{0mm}{5mm}{1mm}
-\titlespacing*{\subsubsection}{0mm}{5mm}{1mm}
-\titlespacing*{\paragraph}{0mm}{2mm}{1mm}
-\titlespacing*{\subparagraph}{0mm}{2mm}{1mm}
+\titlespacing*{\section}{\parindent}{5mm}{1mm}
+\titlespacing*{\subsection}{\parindent}{5mm}{1mm}
+\titlespacing*{\subsubsection}{\parindent}{5mm}{1mm}
+\titlespacing*{\paragraph}{\parindent}{2mm}{1mm}
+\titlespacing*{\subparagraph}{\parindent}{2mm}{1mm}
 
 
 \usepackage{fancyhdr}
@@ -93,7 +92,7 @@ postheadspace=0mm, headindent=3mm,
 \renewcommand{\footrulewidth}{0mm}
 % \fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
 \fancyhead[RO,RE]{\sffamily\leftmark} 
-\fancyfoot[CE,CO]{.: {\ttfamily\bfseries\thepage}\ :.}
+\fancyfoot[CE,CO]{.:\ {\ttfamily\bfseries\thepage}\ :.}
 \fancyfoot[R]{\sffamily\shortfaculty}
 \fancyfoot[L]{\sffamily\shortdepartment\ \shortuniversity}
 \pagestyle{fancy}
