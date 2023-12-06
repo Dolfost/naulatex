@@ -1,5 +1,5 @@
 % !TeX root = ../document.tex
-\documentclass[14pt]{article}
+\documentclass[14pt]{report}
 \usepackage[english, ukrainian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -16,7 +16,6 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{blindtext}
 
-
 % \usepackage{parskip} % remove the paragraph indentation
 
 
@@ -26,7 +25,7 @@
 \usepackage[section]{placeins}
 
 
-\usepackage[titletoc, toc, page, title]{appendix}
+\usepackage[titletoc, toc, title]{appendix}
 
 
 \usepackage{amsmath}
@@ -69,19 +68,23 @@ postheadspace=0mm, headindent=3mm,
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{caption}
-\captionsetup{font=sf, labelfont=sf, margin=1cm, skip=2.5mm, labelsep=period, figureposition=below,
+\counterwithin{figure}{chapter}
+\captionsetup{font=sf, labelfont=sf, margin=1cm, skip=2.5mm, labelsep=endash, figureposition=below,
 			  tableposition=above}
-\DeclareCaptionFormat{tableCaption}{{\hfill#1#2\\#3}}
-\captionsetup[table]{format=tableCaption, name={Таблиця}, labelsep=none}
+			  \DeclareCaptionFormat{tableCaption}{{#1#2#3}}
+\captionsetup[table]{format=tableCaption, justification=raggedright, singlelinecheck=false, position=top, name={Таблиця}, labelsep=endash}
 \usepackage{titlesec}
-\titleformat{\section}{\LARGE\normalfont\bfseries\sffamily}{\thesection.}{2.2mm}{}
-\titleformat{\subsection}{\Large\normalfont\bfseries\sffamily}{\thesubsection.}{2.2mm}{}
-\titleformat{\subsubsection}{\large\normalfont\bfseries\sffamily}{\thesubsubsection.}{2.2mm}{}
-\titleformat{\paragraph}{\large\normalfont\bfseries\sffamily}{}{}{}
-\titleformat{\subparagraph}{\normalsize\normalfont\bfseries\sffamily}{}{2mm}{}
-\titlespacing*{\section}{\parindent}{5mm}{1mm}
-\titlespacing*{\subsection}{\parindent}{5mm}{1mm}
-\titlespacing*{\subsubsection}{\parindent}{5mm}{1mm}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}{\huge\normalfont\bfseries\sffamily}{\thechapter.}{2.2mm}{}
+\titleformat{\section}{\LARGE\normalfont\bfseries\sffamily}{\thesection}{2.2mm}{}
+\titleformat{\subsection}{\Large\normalfont\bfseries\sffamily}{\thesubsection}{2.2mm}{}
+\titleformat{\subsubsection}{\large\normalfont\bfseries\sffamily}{\thesubsubsection}{2.2mm}{}
+\titleformat{\paragraph}{\large\normalfont\bfseries\sffamily}{\theparagraph}{}{}
+\titleformat{\subparagraph}{\large\normalfont\bfseries\sffamily}{\thesubparagraph}{2mm}{}
+\titlespacing*{\chapter}{\parindent}{4mm}{1mm}
+\titlespacing*{\section}{\parindent}{4mm}{1mm}
+\titlespacing*{\subsection}{\parindent}{4mm}{1mm}
+\titlespacing*{\subsubsection}{\parindent}{3mm}{1mm}
 \titlespacing*{\paragraph}{\parindent}{2mm}{1mm}
 \titlespacing*{\subparagraph}{\parindent}{2mm}{1mm}
 
@@ -227,6 +230,7 @@ stepnumber=1, fontsize=\footnotesize, xleftmargin=0cm}
 {\noindent\smash{\rule[1.5mm]{0.5\textwidth}{0.3pt}}}
 
 \setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{3} % Set the depth for numbering paragraphs
 
 \frenchspacing
 
