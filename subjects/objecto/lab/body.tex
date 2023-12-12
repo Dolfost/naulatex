@@ -1,7 +1,7 @@
 %TeX root = ../../../document.tex
 \sffamily
 
-\section{Постановка задачі}
+\chapter{Постановка задачі}
 Вміст цієї секції взятий з \cite{CSHPiskunov}.\\
 \bigtext{Тема:}\\
 \bigtext{Мета:}
@@ -10,7 +10,7 @@
 	\item
 \end{itemize}
 
-\paragraph{Вимоги}
+\section{Вимоги}
 Зразок вимог взятий з \cite{kulikov}. 
 \begin{description}
 	\item[Системні характеристики]\directenv
@@ -49,6 +49,8 @@
 					\item Вікно не має мати можливості змінювати свій розмір
 					\item Вікно має бути білим.
 					\item Класс вікна \code{inWnd} це наслідування класу \code{OkCancel}.
+					\item Вікно має мати панель інструментів.
+					\item Кнопка About у панелі інструментів має показувати вміст AssemblyInfo.
 				\end{enumerate}
 		\end{enumerate}
 	\item[Детальні специфікації]\directenv
@@ -58,26 +60,21 @@
 \end{description}
 
 
-\section{Теорія}
+\chapter{Теорія}
 Програма написана на \code{C\#} з застосуванням Windows Forms (WinForms).
 
 Windows Forms - це безкоштовна бібліотека графічних (GUI) класів з
 відкритим вихідним кодом, що входить до складу Microsoft . NET, . NET Framework
 або Mono, надаючи платформу для написання клієнтських додатків для настільних,
 портативних і планшетних комп'ютерів.
-\subsection{Про \code{C\#}}
+\section{Про \code{C\#}}
 Вміст цієї секції взятий з \cite{mslearn}.
 \begin{description}
 	\item[\code{}]
 \end{description}
 
-\section{Про програму}
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=.5\textwidth]{images/help.png}
-	\caption{Довідка по програмі}
-	\label{fig:help}
-\end{figure}
+\chapter{Про програму}
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{images/class.drawio}
@@ -85,37 +82,24 @@ Windows Forms - це безкоштовна бібліотека графічн�
 	\label{fig:classdiagram}
 \end{figure}
 
-\section{Тестування}
+\chapter{Тестування}
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=.93\textwidth]{images/test1}
-	\includegraphics[width=.93\textwidth]{images/test2}
-	\caption{Тестування}
-	\label{fig:tag}
-\end{figure}
-\begin{figure}[htb]
-	\ContinuedFloat\centering
-	\includegraphics[width=\textwidth]{images/test3}
-	\includegraphics[width=\textwidth]{images/test4}
-	\includegraphics[width=\textwidth]{images/test5}
 	\caption{Тестування}
 	\label{fig:tag}
 \end{figure}
 
 \addtocontents{lof}{\bigskip}
-\section{Висновки}
+\chapter{Висновки}
 \begin{itemize}
 	\item Ознайомився:
 		\begin{itemize}
 			\item
-		\end{itemize}
-	\item Вивчив:
-		\begin{itemize}
 			\item
 		\end{itemize}
 	\item Реалізував:
 		\begin{itemize}
-			\item
 			\item
 		\end{itemize}
 \end{itemize}
