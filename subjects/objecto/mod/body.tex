@@ -1,38 +1,105 @@
-%!TeX root = ../../../document.tex
-\nocite{*}
+%TeX root = ../../../document.tex
 \sffamily
 
-\section{Постановка задачі}
-\addcontentsline{lol}{section}{Постановка задачі}
-\bigtext{Тема:}
+\chapter{Постановка задачі}
+Вміст цієї секції взятий з \cite{CSHPiskunov}.\\
+\bigtext{Тема:}\\
 \bigtext{Мета:}
-
-
-\addtocontents{lol}{\bigskip}
-\section{Теоретичні відомості}
-\input{\includepath/labtheory}
-
-
-\section{Блок-схема та алгоритми}
-\subsection{Алгоритми}
-\addcontentsline{lol}{section}{Алгоритми}
-
-
-\subsection{Блок-схеми}
-
-
-\addtocontents{lol}{\bigskip}
-\section{Тестування}
-\subsection{План тестування}
-\addcontentsline{lof}{section}{Тестування}
-Проведемо тестування наступним чином:
-\begin{enumerate}
+\begin{itemize}
 	\item
-\end{enumerate}
-\subsection{Тестування}
-\paragraph{Пункт \code{а}}
+	\item
+\end{itemize}
 
+\section{Вимоги}
+Зразок вимог взятий з \cite{kulikov}. 
+\begin{description}
+	\item[Системні характеристики]\directenv
+		\begin{enumerate}
+			\item Програма має бути консольним додатком
+			\item Програма розробляється мовою програмування \code{C\#} 
+			\item Програма не обов'язково має бути кросс платформенною
+		\end{enumerate}
+	\item[Вимоги користувача]\directenv
+		\begin{enumerate}
+			\item Запуск і зупинка додатку (відбувається в терміналі)
+				\begin{description}
+					\item[Windows]
+						Запуск відбувається за допомогою префіксу відносного шляху \code{.\textbackslash}
+					\item[Unix-like]
+						Програма не працює на даній платформі
+				\end{description}
+			\item Налаштування програми
+				\begin{enumerate}
+					\item Налаштування відбувається через передачу слів як аргументів командного рядка
+				\end{enumerate}
+			\item Перегляд журналу роботи
+				\begin{enumerate}
+					\item Журнал роботи не передбачений
+				\end{enumerate}
+		\end{enumerate}
+	\item[Атрибути якості]\directenv
+		\begin{enumerate}
+			\item Стійкість до вхідних даних
+				\begin{enumerate}
+					\item Неякісні вхідні дані не мають приводити до аварійного завершення програми
+				\end{enumerate}
+			\item Вікна
+				\begin{enumerate}
+					\item Вікно не повинно мати елементів "приховати" та "на повний екран"
+					\item Вікно не має мати можливості змінювати свій розмір
+					\item Вікно має бути білим.
+					\item Класс вікна \code{inWnd} це наслідування класу \code{OkCancel}.
+					\item Вікно має мати панель інструментів.
+					\item Кнопка About у панелі інструментів має показувати вміст AssemblyInfo.
+				\end{enumerate}
+		\end{enumerate}
+	\item[Детальні специфікації]\directenv
+		\begin{enumerate}
+			\item Версія \code{dotnet framework} - 4.0
+		\end{enumerate}
+\end{description}
+
+
+\chapter{Теорія}
+Програма написана на \code{C\#} з застосуванням Windows Forms (WinForms).
+
+Windows Forms - це безкоштовна бібліотека графічних (GUI) класів з
+відкритим вихідним кодом, що входить до складу Microsoft . NET, . NET Framework
+або Mono, надаючи платформу для написання клієнтських додатків для настільних,
+портативних і планшетних комп'ютерів.
+\section{Про \code{C\#}}
+Вміст цієї секції взятий з \cite{mslearn}.
+\begin{description}
+	\item[\code{}]
+\end{description}
+
+\chapter{Про програму}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{images/class.drawio}
+	\caption{UML-діаграма класів}
+	\label{fig:classdiagram}
+\end{figure}
+
+\chapter{Тестування}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.93\textwidth]{images/test1}
+	\caption{Тестування}
+	\label{fig:tag}
+\end{figure}
 
 \addtocontents{lof}{\bigskip}
-\section{Висновок}
-Програма працює як і заплановано.
+\chapter{Висновки}
+\begin{itemize}
+	\item Ознайомився:
+		\begin{itemize}
+			\item
+			\item
+		\end{itemize}
+	\item Реалізував:
+		\begin{itemize}
+			\item
+		\end{itemize}
+\end{itemize}
