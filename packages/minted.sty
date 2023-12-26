@@ -1,0 +1,26 @@
+\ProvidesExplPackage{packages/minted}{2023--27--12}{1.0}{%
+Minted environment setup.
+}
+
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+\usemintedstyle{tango}
+
+\setminted{%
+	numbers=right,
+	linenos=true,
+	autogobble,
+	breaklines,
+	tabsize=4,
+	bgcolor=CodeBackground,
+	frame=leftline,
+	framerule=0.35pt,
+	framesep=2mm,
+	numbersep=1mm,
+	highlightcolor=LimeGreen,
+	curlyquotes=true,
+	mathescape,
+	stepnumber=1,
+	fontsize=\footnotesize,
+	xleftmargin=0cm,
+}
