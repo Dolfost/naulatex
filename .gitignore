@@ -18,6 +18,7 @@
 *.gz
 *.xml
 minted_cache/*
+TODO/*
 *.nav
 *.snm
 
