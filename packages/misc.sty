@@ -4,7 +4,7 @@ Some cursed LaTeX utilities.
 
 % add image path to the image
 \DeclareOption{showimagepaths}{%
-	\LetLtxMacro{\OldIncludegraphics}{\includegraphics}
+	\NewCommandCopy{\OldIncludegraphics}{\includegraphics}
 	\RenewDocumentCommand{\includegraphics}{om}{%
 		\OldIncludegraphics[#1]{#2}%
 		\vspace{-2cm}%
