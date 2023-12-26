@@ -1,23 +1,25 @@
 % !TeX root = document.tex
-\documentclass[14pt]{report}
+\documentclass[11pt]{report}
 
 \usepackage{polyglossia}
-\setmainfont{FreeSerif}
-\setsansfont{FreeSans}
-\setmonofont{FreeMono}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
 \setmainlanguage{ukrainian}
 \setotherlanguage{english}
 
 \usepackage{packages/uservars} % User variables
 
 
-\usepackage{geometry}
+\usepackage[showframe]{geometry}
 \geometry{%
 	paper=a4paper,
 	inner=1cm, outer=1cm, top=2cm, bottom=2cm, 
 	bindingoffset=1.5cm, 
+	headheight=7mm,
 	includehead=false, includefoot=false, portrait
 }
+
 
 \usepackage{graphicx}
 \usepackage{float}
