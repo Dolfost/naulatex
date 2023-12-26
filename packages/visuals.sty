@@ -28,8 +28,8 @@ Visuals setup.
 
 \RequirePackage{fancyhdr}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0.18mm}
-\renewcommand{\footrulewidth}{0mm}
+\RenewDocumentCommand{\headrulewidth}{}{0.18mm}
+\RenewDocumentCommand{\footrulewidth}{}{0mm}
 % \fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
 \fancyhead[R]{\sffamily\leftmark} 
 \fancyfoot[C]{.:~{\ttfamily\bfseries\thepage}~:.}
@@ -38,5 +38,6 @@ Visuals setup.
 \pagestyle{fancy}
 
 
-\renewcommand{\footnoterule}
-{\noindent\smash{\rule[1.5mm]{0.5\textwidth}{0.3pt}}}
+\RenewDocumentCommand{\footnoterule}{}{%
+\noindent\smash{\rule[1.5mm]{0.5\textwidth}{0.3pt}}%
+}
