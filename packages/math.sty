@@ -1,0 +1,24 @@
+\ProvidesExplPackage{packages/math}{2023--26--12}{1.0}{%
+User math stuff.
+}
+
+\RequirePackage{mathtools}
+\mathtoolsset{showonlyrefs=false}
+\numberwithin{equation}{section}
+
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+\declaretheoremstyle[
+	notefont=\normalfont\itshape, notebraces={}{},
+	headfont=\bfseries\sffamily,
+	bodyfont=\normalfont,
+	headformat=\NAME\ \NUMBER\ \NOTE,
+	headpunct=\sffamily.\\,
+	spaceabove=2mm, spacebelow=2mm,
+	postheadspace=0mm, headindent=3mm,
+]{thmstyle}
+\declaretheorem[style=thmstyle, numberwithin=section, name=Теорема]{thm}
+\declaretheorem[style=thmstyle, numberwithin=section, name=Означення]{dfn}
+
+
+

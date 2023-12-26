@@ -1,0 +1,42 @@
+\ProvidesExplPackage{packages/misc}{2023--26--12}{1.0}{%
+Some cursed LaTeX utilities.
+}
+
+% add image path to the image
+\DeclareOption{showimagepaths}{%
+	\LetLtxMacro{\OldIncludegraphics}{\includegraphics}
+	\RenewDocumentCommand{\includegraphics}{om}{%
+		\OldIncludegraphics[#1]{#2}%
+		\vspace{-2cm}%
+		\center{\smash{\colorbox{red}{\textcolor{white}{\tiny \tt \detokenize{#2}}}}}%
+		\vspace{2cm}%
+	}
+}
+
+% Set the \<float>true if <float> were used
+\DeclareOption{iftox}{%
+	\newif\iffigures%
+	\AtBeginEnvironment{figure}{%
+		\iffigures\else\global\figurestrue\fi
+	}
+	\newif\iftables%
+	\AtBeginEnvironment{table}{%
+		\iftables\else\global\tablestrue\fi
+	}
+	\AtBeginEnvironment{longtable}{%
+		\iftables\else\global\tablestrue\fi
+	}
+	\newif\iflistings%
+	\AtBeginEnvironment{listing}{%
+		\iflistings\else\global\listingstrue\fi
+	}
+	\newif\iftheorems%
+	\AtBeginEnvironment{thm}{%
+		\iftheorems\else\global\theoremstrue\fi
+	}
+	\newif\ifdefenitions%
+	\AtBeginEnvironment{dfn}{%
+	\ifdefenitions\else\global\defenitionstrue\fi
+	}
+}
+\ProcessOptions\relax

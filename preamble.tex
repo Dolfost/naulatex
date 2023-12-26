@@ -1,0 +1,98 @@
+% !TeX root = document.tex
+\documentclass[14pt]{report}
+
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans}
+\setmonofont{CMU Mono}
+
+\usepackage{polyglossia}
+\setmainlanguage{ukrainian}
+\setotherlanguage{english}
+
+\usepackage{packages/uservars} % User variables
+
+
+\usepackage{geometry}
+\geometry{%
+	paper=a4paper,
+	inner=1cm, outer=1cm, top=2cm, bottom=2cm, 
+	bindingoffset=1.5cm, 
+	includehead=false, includefoot=false, portrait
+}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[section]{placeins}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{blindtext}
+\usepackage[titletoc, toc, title]{appendix}
+
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{esvect}
+\usepackage{packages/math}
+
+\usepackage{enumitem}
+\usepackage{packages/enums}
+
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{packages/visuals}
+
+
+\usepackage[nottoc]{tocbibind}
+
+\usepackage[sorting=none]{biblatex}
+% \addbibresource{\subjectpath/bibliography.bib}
+
+\usepackage{imakeidx}
+\indexsetup{firstpagestyle=fancy}
+\newcommand{\mainindex}[1]{{\bfseries #1}}
+\makeindex[options=-s iso]
+
+
+\usepackage{hyperref}
+\usepackage{packages/hyperrefs}
+
+\usepackage{cleveref}
+% \crefname{figure}{рис.}{рис.}
+% \Crefname{figure}{Рис.}{Рис.}
+% \crefname{table}{табл.}{табл.}
+% \Crefname{table}{Табл.}{Табл.}
+% \crefname{listing}{ліс.}{ліс.}
+% \Crefname{listing}{Ліс.}{Ліс.}
+
+% \Crefname{section}{Розд.}{Розд.}
+% \Crefname{section}{розд.}{розд.}
+
+% \crefname{equation}{вир.}{вир.}
+% \Crefname{equation}{Вир.}{Вир.}
+% \crefname{thm}{трм.}{трм.}
+% \Crefname{thm}{Трм.}{Трм.}
+% \crefname{dfn}{озн.}{озн.}
+% \Crefname{dfn}{Озн.}{Озн.}
+\usepackage{nameref}
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{3} % Set the depth for numbering paragraphs
+
+\usepackage[iftox]{packages/misc}
+
+
+%%% 			Preamble made by Vladyslav Rehan			  %%%
+% 	https://tex.stackexchange.com/users/283011/vladyslav-rehan	%
+% 	https://github.com/Dolfost									%

@@ -1,0 +1,42 @@
+\ProvidesExplPackage{packages/visuals}{2023--26--12}{1.0}{%
+Visuals setup.
+}
+
+\RequirePackage{caption}
+\counterwithin{figure}{chapter}
+\captionsetup{font=sf, labelfont=sf, margin=1cm, skip=2.5mm, labelsep=endash, figureposition=below,
+			  tableposition=above}
+			  \DeclareCaptionFormat{tableCaption}{{#1#2#3}}
+% \captionsetup[table]{format=tableCaption, justification=raggedright, singlelinecheck=false, position=top, name={Таблиця}, labelsep=endash}
+
+
+\RequirePackage{titlesec}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}{\huge\normalfont\bfseries\sffamily}{\thechapter.}{2.2mm}{}
+\titleformat{\section}{\LARGE\normalfont\bfseries\sffamily}{\thesection}{2.2mm}{}
+\titleformat{\subsection}{\Large\normalfont\bfseries\sffamily}{\thesubsection}{2.2mm}{}
+\titleformat{\subsubsection}{\large\normalfont\bfseries\sffamily}{\thesubsubsection}{2.2mm}{}
+\titleformat{\paragraph}{\large\normalfont\bfseries\sffamily}{\theparagraph}{}{}
+\titleformat{\subparagraph}{\large\normalfont\bfseries\sffamily}{\thesubparagraph}{2mm}{}
+\titlespacing*{\chapter}{\parindent}{4mm}{1mm}
+\titlespacing*{\section}{\parindent}{4mm}{1mm}
+\titlespacing*{\subsection}{\parindent}{4mm}{1mm}
+\titlespacing*{\subsubsection}{\parindent}{3mm}{1mm}
+\titlespacing*{\paragraph}{\parindent}{2mm}{1mm}
+\titlespacing*{\subparagraph}{\parindent}{2mm}{1mm}
+
+
+\RequirePackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.18mm}
+\renewcommand{\footrulewidth}{0mm}
+% \fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
+\fancyhead[R]{\sffamily\leftmark} 
+\fancyfoot[C]{.:~{\ttfamily\bfseries\thepage}~:.}
+\fancyfoot[R]{\sffamily\shortfaculty}
+\fancyfoot[L]{\sffamily\shortdepartment\ \shortuniversity}
+\pagestyle{fancy}
+
+
+\renewcommand{\footnoterule}
+{\noindent\smash{\rule[1.5mm]{0.5\textwidth}{0.3pt}}}
