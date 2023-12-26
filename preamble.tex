@@ -6,7 +6,7 @@
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
 \setmainlanguage{ukrainian}
-\setotherlanguage{english}
+\setotherlanguages{english, russian}
 
 \usepackage{packages/uservars} % User variables
 
@@ -28,19 +28,24 @@
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{blindtext}
-\usepackage[titletoc, toc, title]{appendix}
+\usepackage{syntonly}
 
 
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage[autostyle]{csquotes}
+\usepackage{verbatim}
 
 \usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage[math-style=ISO]{unicode-math}
 \usepackage{amsthm}
 \usepackage{thmtools}
 \usepackage{amsfonts}
-\usepackage{amssymb}
+% \usepackage{amssymb}
 \usepackage{esvect}
 \usepackage{packages/math}
 
@@ -52,15 +57,19 @@
 \usepackage{fancyhdr}
 \usepackage{packages/visuals}
 
+\usepackage[cachedir=minted_cache]{minted}
+\usepackage{packages/minted}
 
 \usepackage[nottoc]{tocbibind}
 
 \usepackage[sorting=none]{biblatex}
 % \addbibresource{\subjectpath/bibliography.bib}
 
+\usepackage[titletoc, toc, title]{appendix}
+
 \usepackage{imakeidx}
 \indexsetup{firstpagestyle=fancy}
-\newcommand{\mainindex}[1]{{\bfseries #1}}
+\NewDocumentCommand{\mainindex}{m}{{\bfseries #1}}
 \makeindex[options=-s iso]
 
 
