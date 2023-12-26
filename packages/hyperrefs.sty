@@ -22,3 +22,13 @@ hyperref package setup.
 	bookmarksnumbered=false, % Includes the section number in bookmarks
 	pdfstartpage=1 % Specifies which page would be shown when the PDF file is opened
 }
+
+\hypersetup{%
+	pdfinfo = {%
+		Title = Title,
+		Author = \studentname,
+		Subject = \university,
+		Keywords = {LaTeX, typesetting},
+		Producer = LuaTeX,
+	}%
+}%
