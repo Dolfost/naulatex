@@ -4,9 +4,17 @@ Visuals setup.
 
 \RequirePackage{caption}
 \counterwithin{figure}{chapter}
-\captionsetup{font=sf, labelfont=sf, margin=1cm, skip=2.5mm, labelsep=endash, figureposition=below,
-			  tableposition=above}
-			  \DeclareCaptionFormat{tableCaption}{{#1#2#3}}
+\captionsetup{%
+	font=sf,
+	labelfont=sf,
+	margin=1cm,
+	skip=2.5mm,
+	labelsep=endash,
+	figureposition=below,
+	tableposition=above
+}
+
+\DeclareCaptionFormat{tableCaption}{{#1#2#3}}
 % \captionsetup[table]{format=tableCaption, justification=raggedright, singlelinecheck=false, position=top, name={Таблиця}, labelsep=endash}
 
 
@@ -31,10 +39,10 @@ Visuals setup.
 \RenewDocumentCommand{\headrulewidth}{}{0.18mm}
 \RenewDocumentCommand{\footrulewidth}{}{0mm}
 % \fancyhead[L]{\scriptsize\sffamily\hyperlink{tocLink}{ПЕРЕЙТИ ДО ЗМІСТУ}}
-\fancyhead[R]{\sffamily\leftmark} 
+\fancyhead[R]{\sffamily\nouppercase{\firstleftmark}} 
 \fancyfoot[C]{.:~{\ttfamily\bfseries\thepage}~:.}
 \fancyfoot[R]{\sffamily\shortfaculty}
-\fancyfoot[L]{\sffamily\shortdepartment\ \shortuniversity}
+\fancyfoot[L]{\sffamily\shortdepartment~\shortuniversity}
 \pagestyle{fancy}
 
 
