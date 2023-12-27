@@ -20,14 +20,14 @@ hyperref package setup.
 	frenchlinks=false, % Uses small caps for links instead of color
 	bookmarksopen=false, % Shows all bookmarks in an expanded view
 	bookmarksnumbered=false, % Includes the section number in bookmarks
-	pdfstartpage=1 % Specifies which page would be shown when the PDF file is opened
+	pdfstartpage=1, % Specifies which page would be shown when the PDF file is opened
 }
 
 \hypersetup{%
 	pdfinfo = {%
 		Title = Title,
-		Author = \studentname,
-		Subject = \university,
+		Author = \texorpdfstring{\studentname}{},
+		Subject = \texorpdfstring{\university}{},
 		Keywords = {LaTeX, typesetting},
 		Producer = LuaTeX,
 	}%
