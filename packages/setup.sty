@@ -1,0 +1,33 @@
+\ProvidesExplPackage{packages/setup}{2023--27--12}{1.0}{%
+The User setup package.
+}
+
+\usepackage{xkeyval}
+\NewDocumentCommand{\modnumber}{}{1}
+\NewDocumentCommand{\worknumber}{}{1}
+
+\NewDocumentCommand{\proddate}{}{\today}
+\NewDocumentCommand{\prodnumber}{}{}
+
+\NewDocumentCommand{\subjectname}{}{subjectname}
+\NewDocumentCommand{\prodname}{}{prodname}
+\NewDocumentCommand{\teacher}{}{teacher}
+
+
+\DeclareOptionX{modnumber}{\RenewDocumentCommand{\modnumber}{}{#1}}
+\DeclareOptionX{worknumber}{\RenewDocumentCommand{\worknumber}{}{#1}}
+\DeclareOptionX{proddate}{\RenewDocumentCommand{\proddate}{}{#1}}
+\DeclareOptionX{printprodnumber}{%
+	\RenewDocumentCommand{\prodnumber}{}{№\modnumber.\worknumber}%
+}%
+
+\DeclareOptionX{oop_lab}{%
+	\RenewDocumentCommand{\subjectname}{}{Об'єктно~орієнтоване~програмування}%
+	\RenewDocumentCommand{\prodname}{}{Лабораторна~робота}%
+	\RenewDocumentCommand{\teacher}{}{Олексій~Германович~Піскунов}%
+}
+
+\ExecuteOptionsX{oop_lab}
+\DeclareOptionX*{\PackageWarning{packages/setup}{`\CurrentOption' is ignored}}%
+\ProcessOptionsX\relax
+
