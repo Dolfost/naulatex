@@ -1,30 +1,37 @@
 % !TeX root = document.tex
 % !TeX program = lualatex
 
-% \newcommand{\subjectfolder}{subjects}
-% \input{variables/variables}
+\input{preamble}
+% \syntaxonly % WARN: this will not produce pdf output
 
-% \input{preamble/preamble}
-
-% \input{variables/texvariables}
-% \input{commands/commands}
-
-\input{preamble.tex}
+\usepackage[
+	modnumber=1,
+	worknumber=1,
+	printprodnumber,
+	proddate={\today},
+	oop, lab,
+]{packages/setup}
 
 \begin{document}
-	\begin{abstract}
-		\blindtext[5]
-	\end{abstract}
-	\section{Глава 1}
-	% \input{matter/frontmatter}
+	% Title
+	\input{matter/title}
 
-	% \input{\bodypath}
+	\nocite{*}
 
-	% \input{matter/backmatter}
+	% Chapter files
+	% \subfile{chapters/chapter1/chapter1}
+	% \subfile{chapters/chapter2/chapter2}
 
+
+	% Subject files
+	\subfile{subjects/oop/body} 
+
+	% Post-title
+	\input{matter/endtitle}
 \end{document}
 
 
 
-
-% TODO: fix cref and polyglossia compatibility (TODO/d.tex)
+% TODO: fix cleverref and polyglossia compatibility (TODO/d.tex)
+% PARTIALY DONE: fix bibliography importing with macros path (last line of setup.sty)
+% DONE: fix fonts
