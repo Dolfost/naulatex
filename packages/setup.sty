@@ -13,6 +13,8 @@ The User setup package.
 \NewDocumentCommand{\prodname}{}{prodname}
 \NewDocumentCommand{\teacher}{}{teacher}
 
+\NewDocumentCommand{\subjectpath}{}{}
+
 
 \DeclareOptionX{modnumber}{\RenewDocumentCommand{\modnumber}{}{#1}}
 \DeclareOptionX{worknumber}{\RenewDocumentCommand{\worknumber}{}{#1}}
@@ -21,13 +23,47 @@ The User setup package.
 	\RenewDocumentCommand{\prodnumber}{}{№\modnumber.\worknumber}%
 }%
 
-\DeclareOptionX{oop_lab}{%
+% Subjects
+\DeclareOptionX{oop}{%
 	\RenewDocumentCommand{\subjectname}{}{Об'єктно~орієнтоване~програмування}%
-	\RenewDocumentCommand{\prodname}{}{Лабораторна~робота}%
 	\RenewDocumentCommand{\teacher}{}{Олексій~Германович~Піскунов}%
+	\renewcommand{\subjectpath}{subjects/oop}%
 }
 
-\ExecuteOptionsX{oop_lab}
+\DeclareOptionX{ads}{%
+	\RenewDocumentCommand{\subjectname}{}{Алгоритми~та~структури~даних}%
+	\RenewDocumentCommand{\teacher}{}{Ольга~Генадіївна~Чолишкіна}%
+	\renewcommand{\subjectpath}{subjects/ads}%
+}
+
+\DeclareOptionX{matan}{%
+	\RenewDocumentCommand{\subjectname}{}{Математичний~аналіз}%
+	\RenewDocumentCommand{\teacher}{}{Валерій~Григорович~Хребет}%
+	\renewcommand{\subjectpath}{subjects/matan}%
+}
+
+% Work types
+\DeclareOptionX{lab}{%
+	\RenewDocumentCommand{\prodname}{}{Лабораторна~робота}%
+}
+
+\DeclareOptionX{mod}{%
+	\RenewDocumentCommand{\prodname}{}{Модульна~контрольна~робота}%
+}
+
+\DeclareOptionX{kurs}{%
+	\RenewDocumentCommand{\prodname}{}{Курсова~робота}%
+}
+
+\DeclareOptionX{rgr}{%
+	\RenewDocumentCommand{\prodname}{}{Розрахунково--графічна~робота}%
+}
+
+
+\ExecuteOptionsX{oop}
+\ExecuteOptionsX{lab}
 \DeclareOptionX*{\PackageWarning{packages/setup}{`\CurrentOption' is ignored}}%
 \ProcessOptionsX\relax
 
+\RequirePackage{biblatex}
+\addbibresource{\subjectpath/bibliography.bib}
