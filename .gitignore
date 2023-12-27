@@ -17,8 +17,8 @@
 *.out
 *.gz
 *.xml
-minted_cache/*
-TODO/*
+minted_cache/
+TODO/
 *.nav
 *.snm
 
