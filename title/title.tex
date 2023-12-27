@@ -1,0 +1,59 @@
+%! TeX root = ../document.tex
+
+\newlength{\rightshift}
+\setlength{\rightshift}{35pt}
+
+\thispagestyle{empty}
+
+{\sffamily
+\begin{Center}
+	\LARGE{МНІСТЕРСТВО НАУКИ ТА ОСВІТИ УКРАЇНИ}\\
+	\LARGE{\university{}}\\
+	\Large{\faculty{}}\\
+	\Large{\department{}}
+\end{Center}
+
+\vspace*{\fill}
+
+\begin{Center}
+	\includegraphics[width=.4\textwidth]{pm}\\
+\end{Center}
+
+\vspace*{\fill}
+
+\begin{Center}
+	\Large
+	\enquote{\subjectname{}}\\
+	\prodname{} \prodnumber{}\\
+	\proddate{}\\
+\end{Center}
+
+\vspace*{\fill}
+
+\begin{adjustwidth}{\textwidth/2+\rightshift}{0pt}
+	\begin{FlushLeft}
+		\large
+		Виконав:\\
+		студент №\studentnumber{} групи \shortdepartment{} \groupnumber{} \shortuniversity{}\\
+		\studentname{}\\
+	\end{FlushLeft}
+\end{adjustwidth}
+
+\vspace{1cm}
+
+\begin{adjustwidth}{\textwidth/2+\rightshift}{0pt}
+	\begin{FlushLeft}
+		\large
+		Прийняв:\\
+		\teacher{}
+	\end{FlushLeft}
+\end{adjustwidth}
+
+\vspace*{\fill}
+
+\begin{Center}
+	Київ \the\year{}
+\end{Center}
+}
+
+\pagebreak
