@@ -5,6 +5,11 @@
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
+% \setmonofont{fonts/FantasqueSansMono-Regular.ttf}[
+% 	BoldFont = fonts/FantasqueSansMono-Bold.ttf,
+% 	ItalicFont = fonts/FantasqueSansMono-Italic.ttf,
+% 	BoldItalicFont = fonts/FantasqueSansMono-BoldItalic.ttf ]
+\usepackage{anyfontsize}
 \setmainlanguage{ukrainian}
 \setotherlanguages{english, russian}
 
@@ -37,14 +42,13 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{multirow}
-\usepackage{ragged2e}
+\usepackage[originalparameters]{ragged2e}
 \usepackage{changepage}
-\usepackage[autostyle]{csquotes}
 \usepackage{verbatim}
 
 \usepackage{mathtools}
 \usepackage{siunitx}
-\usepackage[math-style=ISO]{unicode-math}
+\usepackage[math-style=ISO,warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
 \usepackage{amsthm}
 \usepackage{thmtools}
 \usepackage{amsfonts}
@@ -63,6 +67,8 @@
 
 \usepackage[cachedir=minted_cache]{minted}
 \usepackage{packages/minted}
+
+\usepackage[autostyle]{csquotes}
 
 \usepackage[nottoc]{tocbibind}
 \usepackage[sorting=none]{biblatex}
