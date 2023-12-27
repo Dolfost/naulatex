@@ -2,7 +2,22 @@
 Some cursed LaTeX utilities.
 }
 
-% add image path to the image
+% See ...
+\NewDocumentCommand{\pref}{m}{(див.~\hyperref[#1]{\cref{#1},~\cpageref{#1}})}
+
+% Bold text for commands
+\NewDocumentCommand{\bigtext}{m}{\textbf{#1}}
+
+% Insert enumeration environment after \item
+\NewDocumentCommand{\directenv}{}{\hfill\vspace{-\baselineskip}}
+
+% Typeset code
+\NewDocumentCommand{\code}{m}{\texttt{#1}}
+
+
+
+
+% Add image path to the image
 \DeclareOption{showimagepaths}{%
 	\NewCommandCopy{\OldIncludegraphics}{\includegraphics}
 	\RenewDocumentCommand{\includegraphics}{om}{%
