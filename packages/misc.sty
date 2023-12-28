@@ -14,8 +14,12 @@ Some cursed LaTeX utilities.
 % Typeset code
 \NewDocumentCommand{\code}{m}{\texttt{#1}}
 
+% Some default math homework formatting commands
+\NewDocumentCommand{\solving}{}{\hspace{\parindent}\textbf{Розв'язання:}\newline}
+\NewDocumentCommand{\ansver}{}{\hspace{\parindent}\textbf{Відповідь:}\newline}
 
 
+%%% Very cursed stuff follows
 
 % Add image path to the image
 \DeclareOption{showimagepaths}{%
