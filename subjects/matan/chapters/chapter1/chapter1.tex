@@ -1,0 +1,38 @@
+\documentclass[../../../../document]{subfiles}
+
+\begin{document}
+	\nocite{*}
+	\chapter{Знайти суму ряду за означенням}
+	\begin{gather}
+		\sum_{n=1}^\infty\frac{7}{49n^2+7n-12} \label{eq:1}
+	\end{gather}
+
+	\solving
+	Необхідна умова збіжності виконується:
+	\begin{gather}
+		\lim_{n\to\infty} \frac{7}{49n^2+7n-12} \equiv 0
+	\end{gather}
+	Розкладемо \(f(x) = \frac{7}{49n^2+7n-12}\) на елементарні дроби:
+	\ldots
+	\ansver
+	Сума ряду \ref{eq:1} рівна \(\frac{49}{9}\).
+
+	\chapter{Дослідити на збіжність}
+	Дослідити на збіжність знакододатний числовий ряд за ознаками порівняння
+	\begin{gather}
+		\sum_{n=3}^\infty \frac{n+5}{(n^2)(n+2)} \label{eq:2}
+	\end{gather}
+
+	\begin{thm}[Гранична ознака порівняння]
+		\label{dfn:zbiz}
+		Нехай \(\sum_{n=1}^\infty u_n\) і \(\sum_{n=1}^\infty v_n\) -- ряди з додатними членами. Якщо існує скінченна, відмінна від нуля, границя
+		\begin{gather}
+			\lim_{n\to\infty}\frac{u_n}{v_n}=k\ (0<k<\infty)
+		\end{gather}
+		то вказані ряди одночасно збіжні або розбіжні.
+	\end{thm}
+	\solving
+	\ldots
+	\ansver
+	Ряд \ref{eq:2} збіжний.
+\end{document}
