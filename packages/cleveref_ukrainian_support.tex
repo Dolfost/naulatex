@@ -1,0 +1,14 @@
+% https://tex.stackexchange.com/questions/706093/ukrainian-polyglossia-wont-make-friends-with-cleveref-package
+\ExplSyntaxOn
+\group_begin:
+\cs_set:Npn \DeclareUnicodeCharacter #1 #2
+ {
+  \bool_lazy_or:nnT
+   { \str_if_eq_p:ee { cyr } { \str_range:nnn { #2 } { 2 } { 4 } } }% \cyr...
+   { \str_if_eq_p:ee { CYR } { \str_range:nnn { #2 } { 2 } { 4 } } }% \CYR...
+   { \cs_gset:Npe #2 { \char_generate:nn { "#1 } { 11 } } }
+ }
+\file_input:n { t2aenc.dfu }
+\group_end:
+\ExplSyntaxOff
+%
