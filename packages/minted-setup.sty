@@ -1,10 +1,14 @@
-\ProvidesExplPackage{packages/minted}{2023--27--12}{1.0}{%
+\ProvidesExplPackage{packages/minted-setup}{2023--27--12}{1.0}{%
 Minted environment setup.
 }
+
+\RequirePackage{xcolor}
 
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 
 \usemintedstyle{tango}
+
+\definecolor{LightGray}{gray}{0.9}
 
 \setminted{%
 	numbers=right,
@@ -12,7 +16,7 @@ Minted environment setup.
 	autogobble,
 	breaklines,
 	tabsize=4,
-	bgcolor=CodeBackground,
+	bgcolor=LightGray,
 	frame=leftline,
 	framerule=0.35pt,
 	framesep=2mm,
