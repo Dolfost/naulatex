@@ -4,11 +4,12 @@
 \usepackage{polyglossia}
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
-\setmonofont{CMU Typewriter Text}
-% \setmonofont{fonts/FantasqueSansMono-Regular.ttf}[
-% 	BoldFont = fonts/FantasqueSansMono-Bold.ttf,
-% 	ItalicFont = fonts/FantasqueSansMono-Italic.ttf,
-% 	BoldItalicFont = fonts/FantasqueSansMono-BoldItalic.ttf ]
+% \setmonofont{CMU Typewriter Text}
+\setmonofont{FantasqueSansMono-Regular.ttf}[
+	Path = fonts/FantasqueSansMono/,
+	BoldFont = FantasqueSansMono-Bold.ttf,
+	ItalicFont = FantasqueSansMono-Italic.ttf,
+	BoldItalicFont = FantasqueSansMono-BoldItalic.ttf ]
 \usepackage{anyfontsize}
 \setmainlanguage{ukrainian}
 \setotherlanguages{english, russian}
@@ -54,10 +55,10 @@
 \usepackage{amsfonts}
 % \usepackage{amssymb}
 \usepackage{esvect}
-\usepackage{packages/math}
+\usepackage{packages/math-setup}
 
 \usepackage{enumitem}
-\usepackage{packages/enums}
+\usepackage{packages/enum-setup}
 
 \usepackage{caption}
 \usepackage{titlesec}
@@ -66,7 +67,7 @@
 \usepackage{packages/visuals}
 
 \usepackage[cachedir=minted_cache]{minted}
-\usepackage{packages/minted}
+\usepackage{packages/minted-setup}
 
 \usepackage[autostyle]{csquotes}
 
@@ -83,10 +84,9 @@
 
 \usepackage{hyperref}
 \usepackage{cleveref}
-\input{packages/cleveref_ukrainian_support}
+\usepackage{packages/cleveref-setup}
 \usepackage{nameref}
-\usepackage{packages/hyperrefs}
-\usepackage{packages/cleveref}
+\usepackage{packages/hyperref-setup}
 
 \usepackage{xr}
 \usepackage{subfiles}
