@@ -4,9 +4,7 @@ Minted environment setup.
 
 \RequirePackage{xcolor}
 
-\newenvironment{longlisting}{\captionsetup{type=listing}}{}
-
-\usemintedstyle{tango}
+\usemintedstyle{gruvbox-light}
 
 \definecolor{LightGray}{gray}{0.9}
 
@@ -28,3 +26,16 @@ Minted environment setup.
 	fontsize=\footnotesize,
 	xleftmargin=0cm,
 }
+
+\setmintedinline{%
+	bgcolor=white,
+	fontsize=\normalsize,
+}
+
+% \<lang>inline|| commands definitions
+\newmintinline{c}{}
+\newmintinline{cpp}{}
+\newmintinline{cs}{}
+\newmintinline{lua}{}
+\newmintinline{sql}{}
+\newmintinline{text}{}

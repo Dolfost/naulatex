@@ -21,9 +21,13 @@ Enumeration environment setup.
 \setlist[description, 2]{style=nextline, font=\mdseries, align=left}
 
 \newlist{steps}{enumerate}{1}
-\setlist[steps,1]{label={Крок \arabic*.}}
+\setlist[steps,1]{label={Крок~\arabic*.}}
 
 \newlist{guiDescription}{enumerate}{3}
 \setlist[guiDescription, 1]{label={\tt\arabic*.}, ref={\tt\arabic*}, font=\sffamily, start=1}
 \setlist[guiDescription, 2]{label={\Alph*}}
 \setlist[guiDescription, 3]{label={\Roman*}}
+
+\newlist{funcDescription}{description}{1}
+\setlist[funcDescription, 1]{itemsep=1mm, style=nextline, font=\mdseries\ttfamily, align=left}
+\NewDocumentCommand{\funcitem}{O{}mv}{\item[{\mintinline[#1]{#2}|#3|}]} % [mintinline options]{language}|mintinline argument|
