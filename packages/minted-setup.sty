@@ -40,6 +40,9 @@ Minted environment setup.
 \newmintinline{sql}{}
 \newmintinline{text}{}
 
+% next enviroment used fror putting listings inside figures properly
+\newenvironment{longlisting}{\captionsetup{type=figure}}{}
+
 \NewDocumentCommand{\codeline}{m}{\texttt{#1}} % used for code inside captions
 
 
