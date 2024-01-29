@@ -2,14 +2,14 @@
 % !TeX program = lualatex
 
 \input{preamble}
-% \syntaxonly % WARN: this will not produce pdf output
+% \syntaxonly %  WARN: this will not produce pdf output
 
 \usepackage[
-	modnumber=3,
-	worknumber=5,
+	modnumber=1,
+	worknumber=1,
 	printprodnumber,
 	proddate={\today},
-	oop, lab,
+	nummet, lab,
 ]{packages/setup}
 
 \begin{document}
@@ -17,14 +17,6 @@
 	\input{matter/title}
 
 	% \nocite{*}
-
-	\begin{figure}
-		\begin{center}
-			\includegraphics[width=0.95\textwidth]{figures/stuff}
-		\end{center}
-		\caption{bruh}\label{fig:bruh }
-	\end{figure}
-	
 
 	% Chapter files for big independent work
 	% \subfile{chapters/chapter1/chapter1}
