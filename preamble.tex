@@ -21,9 +21,9 @@
 \geometry{%
 	paper=a4paper,
 	inner=1cm, outer=1cm, top=2cm, bottom=2cm, 
-	bindingoffset=1.5cm, 
+	bindingoffset=0cm, % use 1.5cm fo DSTU
 	headheight=7mm,
-	includehead=false, includefoot=false, portrait
+	includehead=false, includefoot=false, portrait,
 }
 
 
@@ -66,7 +66,7 @@
 \usepackage{extramarks}
 \usepackage{packages/visuals}
 
-\usepackage[cachedir=minted_cache]{minted}
+\usepackage[cachedir=minted_cache, newfloat=true]{minted}
 \usepackage{packages/minted-setup}
 
 \usepackage[autostyle]{csquotes}
