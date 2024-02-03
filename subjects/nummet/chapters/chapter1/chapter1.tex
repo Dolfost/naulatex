@@ -3,14 +3,26 @@
 \begin{document}
 	\chapter{Постановка задачі}
 	Вміст цієї секції взятий з~\cite{computational_methods}.\\
-	\bigtext{Тема:}\\
+	\bigtext{Тема:} \worktheme.\\
 	\bigtext{Мета:}
 	\begin{itemize}
 		\item
 		\item
 	\end{itemize}
+	Варіант завдання --- \studentnumber:
+	\begin{enumerate}
+		\item
+			\begin{gather}
+			\end{gather}
+	\end{enumerate}
 
 	\chapter{Теорія}
+	\section{Завдання 1}
+	\label{sec:prb1thr}
+
+	\section{Завдання 2}
+	\label{sec:prb2thr}
+
 	\chapter{Про програму}
 	Програма написана на \textinline|C++| з застосуванням Qt framework.
 
@@ -20,39 +32,69 @@
 	платформах, таких як Linux, Windows, macOS, Android або вбудованих системах, з
 	невеликими змінами або без змін у базовій кодовій базі, залишаючись при цьому
 	нативним додатком з нативними можливостями і швидкістю.
+
 	\section{Про \texttt{C++}}
+	\section{Файлова структура програми}
+	Програма має наступну структуру:
+	\begin{description}
+		\item[\textinline{CMakeLists.txt}]
+			Набір інструкцій \textinline|CMake| для побудови програми. 
+		\item[\textinline{main.cpp}]
+			Точка входу в програму. 
+		\item[\textinline{calculator.cpp}]
+			Імплементація графічного інтерфейсу користувача. 
+		\item[\textinline|tabs.cpp|]
+			Імплементація обчислень кожної вкладки. Вміст цього файлу зображений на \cref{fig:lst}.
+	\end{description}
+	До натиску кнопки \enquote{Claculate} в кожній вкладці прив'язана відповідна функція з \textinline{tabs.cpp}:
 	\begin{funcDescription}
-		\funcitem{cs}|int a f(double b)|
-		
+		\funcitem{cpp}|QString* tab1func(QString x, QString sqrtx, QString a, QString b, QString abyb)|
+			Приймає рядки з введеннями користувача у вкладку 1, повертає буфер символів при
+			вдалому обчисленні, або \cppinline|nullptr| при помилці. Блок-схема
+			цієї функції зображена на \cref{fig:blockdiagram}.
+		\funcitem{cpp}|QString* tab2func(QString a, QString aValue)|
+			Приймає рядки з введеннями користувача у вкладку 2, повертає буфер символів при
+			вдалому обчисленні, або \cppinline|nullptr| при помилці.
+		\funcitem{cpp}|QString* tab3func(QString a)|
+			Приймає рядки з введеннями користувача у вкладку 3, повертає буфер символів при
+			вдалому обчисленні, або \cppinline|nullptr| при помилці.
 	\end{funcDescription}
 	
+	\subsection{Алгоритм вирішення задачі 1}
 
+	\subsection{Алгоритм вирішення задачі 2}
 
-	\begin{figure}[htb]
-		\centering
-		% \includegraphics[width=\textwidth]{class.drawio}
-		\caption{Блок-схема функції \codeline{int a(int b)}}%
-		\label{fig:blockdiagram}%
-	\end{figure}
-
+	\FloatBarrier
 	\chapter{Тестування}
-	\begin{figure}[htb]
+	Протестуємо отриманий прграмний застосунок. 
+	\section{Розвʼязання задачі 1}
+	Для розвʼязання задачі 1, введемо дані з умови в форму, та нажмемо кнопку \enquote{Compute}.
+	\begin{figure}[h]
 		\centering
-		% \includegraphics[width=.93\textwidth]{test1}
-		\caption{Тестування}%
-		\label{fig:tag}
+		% \includegraphics[width=.35\textwidth]{\subfix{images/test1}}
+		\caption{Розвʼязання задачі 1 за допомогою створеного програмного застосунку}%
+		\label{fig:test1}
+	\end{figure}
+	\section{Розвʼязання задачі 2}
+	Для розвʼязання задачі 2, введемо дані з умови в форму, та нажмемо кнопку \enquote{Compute}.
+	\begin{figure}[h]
+		\centering
+		% \includegraphics[width=.32\textwidth]{\subfix{images/test2}}
+		\caption{Розвʼязання задачі 2 за допомогою створеного програмного застосунку}%
+		\label{fig:test2}
 	\end{figure}
 
+	\FloatBarrier
 	\chapter{Висновки}
+	В результаті розробки програмного застосунку було:
 	\begin{itemize}
-		\item Ознайомився:
-			\begin{itemize}
-				\item
-				\item
-			\end{itemize}
-		\item Реалізував:
-			\begin{itemize}
-				\item
-			\end{itemize}
+		\item 
+		\item
+	\end{itemize}
+	Було отримано програмний застосунок який здатен:
+	\begin{itemize}
+		\item
+		\item
+		\item
 	\end{itemize}
 \end{document}
