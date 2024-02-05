@@ -14,6 +14,9 @@
 		\item
 			\begin{gather}
 			\end{gather}
+		\item
+			\begin{gather}
+			\end{gather}
 	\end{enumerate}
 
 	\chapter{Теорія}
@@ -32,9 +35,14 @@
 	платформах, таких як Linux, Windows, macOS, Android або вбудованих системах, з
 	невеликими змінами або без змін у базовій кодовій базі, залишаючись при цьому
 	нативним додатком з нативними можливостями і швидкістю.
-
+	
+	Обчислення математичних виразів у рядковому відображенні відбувається за допомогою бібліотеки \textinline|exptrk| яку написав Arash Partow:
+	\begin{itemize}
+		\item Офіційна сторінка автора: \url{https://www.partow.net/programming/exprtk/index.html}
+		\item Сторінка проекту на \url{github.com}: \url{https://github.com/ArashPartow/exprtk/tree/master}
+	\end{itemize}
 	\section{Про \texttt{C++}}
-	\section{Файлова структура програми}
+	\subsection{Файлова структура програми}
 	Програма має наступну структуру:
 	\begin{description}
 		\item[\textinline{CMakeLists.txt}]
@@ -44,55 +52,67 @@
 		\item[\textinline{calculator.cpp}]
 			Імплементація графічного інтерфейсу користувача. 
 		\item[\textinline|tabs.cpp|]
-			Імплементація обчислень кожної вкладки. Вміст цього файлу зображений на \cref{fig:lst}.
+			Імплементація обчислень кожної вкладки. Вміст цього файлу зображений на \cref{lst:code}.
+		\item[\textinline|exprtk_cmake/|] Бібліотека для обробки математичних виразів, як рядків.
 	\end{description}
-	До натиску кнопки \enquote{Claculate} в кожній вкладці прив'язана відповідна функція з \textinline{tabs.cpp}:
+	До натиску кнопки \enquote{Compute} в кожній вкладці прив'язана відповідна функція з \textinline{tabs.cpp}:
+	\begin{longlisting}
+		 \begin{Center}
+			 % \inputminted{cpp}{\subfix{../../../../../tabs.cpp}}
+		 \end{Center}
+		 \caption{Файл \textinline{tabs.cpp}}\label{lst:code}
+	\end{longlisting}
+
 	\begin{funcDescription}
-		\funcitem{cpp}|QString* tab1func(QString x, QString sqrtx, QString a, QString b, QString abyb)|
-			Приймає рядки з введеннями користувача у вкладку 1, повертає буфер символів при
-			вдалому обчисленні, або \cppinline|nullptr| при помилці. Блок-схема
-			цієї функції зображена на \cref{fig:blockdiagram}.
-		\funcitem{cpp}|QString* tab2func(QString a, QString aValue)|
-			Приймає рядки з введеннями користувача у вкладку 2, повертає буфер символів при
-			вдалому обчисленні, або \cppinline|nullptr| при помилці.
-		\funcitem{cpp}|QString* tab3func(QString a)|
-			Приймає рядки з введеннями користувача у вкладку 3, повертає буфер символів при
-			вдалому обчисленні, або \cppinline|nullptr| при помилці.
+		\funcitem{cpp}|QString* tab1func(... QString ...)|
+			Приймає рядки з введеннями користувача у вкладку 1, повертає буфер символів. 
+			Реалізацію цієї функції можна побачити на \cref{lst:code}.
+		\funcitem{cpp}|QString* tab2func(... QString ...)|
+			Приймає рядки з введеннями користувача у вкладку 2, повертає буфер символів.
+			Реалізацію цієї функції можна побачити на \cref{lst:code}.
 	\end{funcDescription}
 	
-	\subsection{Алгоритм вирішення задачі 1}
+	\section{Алгоритм вирішення задачі 1}
+	Алгоритм вирішення задачі 1 повністю оснований на теорії з \cref{sec:prb1thr} та реалізує її мовою С++ у функції \cppinline|tab1func()| на \cref{lst:code}.
 
-	\subsection{Алгоритм вирішення задачі 2}
+	\section{Алгоритм вирішення задачі 2}
+	Алгоритм вирішення задачі 2 повністю оснований на теорії з \cref{sec:prb2thr} та реалізує її мовою С++ у функції \cppinline|tab2func()| на \cref{lst:code}. Було застосовано \enquote{метод однакових впливів} для обчисленя абсолютних похибок.
 
 	\FloatBarrier
 	\chapter{Тестування}
 	Протестуємо отриманий прграмний застосунок. 
+	\section{Контрольні приклади}
+	Перевіримо правильність результатів роботи програми на прикладах які наведені в \cite{computational_methods} у практичному занятті \prodnumber{}.
+	\subsection{Приклад 1}
+	Приклад 1 має наступну умову:
+	\begin{gather}
+	\end{gather}
+	Та наступну відповідь:
+	\begin{gather}
+	\end{gather}
+
+	\subsection{Приклад 2}
+	Приклад 2 має наступну умову:
+	\begin{gather}
+	\end{gather}
+	Та наступну відповідь:
+	\begin{gather}
+	\end{gather}
+	
 	\section{Розвʼязання задачі 1}
-	Для розвʼязання задачі 1, введемо дані з умови в форму, та нажмемо кнопку \enquote{Compute}.
-	\begin{figure}[h]
-		\centering
-		% \includegraphics[width=.35\textwidth]{\subfix{images/test1}}
-		\caption{Розвʼязання задачі 1 за допомогою створеного програмного застосунку}%
-		\label{fig:test1}
-	\end{figure}
+
 	\section{Розвʼязання задачі 2}
-	Для розвʼязання задачі 2, введемо дані з умови в форму, та нажмемо кнопку \enquote{Compute}.
-	\begin{figure}[h]
-		\centering
-		% \includegraphics[width=.32\textwidth]{\subfix{images/test2}}
-		\caption{Розвʼязання задачі 2 за допомогою створеного програмного застосунку}%
-		\label{fig:test2}
-	\end{figure}
 
 	\FloatBarrier
 	\chapter{Висновки}
 	В результаті розробки програмного застосунку було:
 	\begin{itemize}
-		\item 
+		\item
 		\item
 	\end{itemize}
 	Було отримано програмний застосунок який здатен:
 	\begin{itemize}
+		\item
 		\item
 		\item
 		\item
