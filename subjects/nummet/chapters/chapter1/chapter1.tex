@@ -4,28 +4,20 @@
 	\chapter{Постановка задачі}
 	Вміст цієї секції взятий з~\cite{computational_methods}.\\
 	\bigtext{Тема:} \worktheme.\\
-	\bigtext{Мета:}
+	\bigtext{Мета:} 
 	\begin{itemize}
-		\item
 		\item
 	\end{itemize}
 	Варіант завдання --- \studentnumber:
 	\begin{enumerate}
 		\item
-			\begin{gather}
-			\end{gather}
-		\item
-			\begin{gather}
-			\end{gather}
 	\end{enumerate}
 
 	\chapter{Теорія}
-	\section{Завдання 1}
-	\label{sec:prb1thr}
+	Вміст цього парагра опрацьовано з \cite{computational_methods} та лекцій.
+	\section{Вирішення задачі 1}
 
-	\section{Завдання 2}
-	\label{sec:prb2thr}
-
+	\FloatBarrier
 	\chapter{Про програму}
 	Програма написана на \textinline|C++| з застосуванням Qt framework.
 
@@ -41,6 +33,7 @@
 		\item Офіційна сторінка автора: \url{https://www.partow.net/programming/exprtk/index.html}
 		\item Сторінка проекту на \url{github.com}: \url{https://github.com/ArashPartow/exprtk/tree/master}
 	\end{itemize}
+
 	\section{Про \texttt{C++}}
 	\subsection{Файлова структура програми}
 	Програма має наступну структуру:
@@ -52,69 +45,75 @@
 		\item[\textinline{calculator.cpp}]
 			Імплементація графічного інтерфейсу користувача. 
 		\item[\textinline|tabs.cpp|]
-			Імплементація обчислень кожної вкладки. Вміст цього файлу зображений на \cref{lst:code}.
+			Імплементація обчислень. Вміст цього файлу зображений на \cref{lst:code}.
 		\item[\textinline|exprtk_cmake/|] Бібліотека для обробки математичних виразів, як рядків.
 	\end{description}
-	До натиску кнопки \enquote{Compute} в кожній вкладці прив'язана відповідна функція з \textinline{tabs.cpp}:
+
+	\section{Алгоритм вирішення задачі}
+	Було розроблено наступний алгоритм вірішення задачі:
+	\begin{enumerate}
+		\item Введення даних. 
+		\item
+		\item
+	\end{enumerate}	
+
+	Програмний код розробленого методу простих ітерацій зображений на \cref{lst:code1}.
 	\begin{longlisting}
 		 \begin{Center}
-			 % \inputminted{cpp}{\subfix{../../../../../tabs.cpp}}
+			 \inputminted{cpp}{\subfix{../../../../../include/iter.cpp}}
 		 \end{Center}
-		 \caption{Файл \textinline{tabs.cpp}}\label{lst:code}
+		 \caption{Файл \textinline{iter.cpp}}\label{lst:code1}
 	\end{longlisting}
-
-	\begin{funcDescription}
-		\funcitem{cpp}|QString* tab1func(... QString ...)|
-			Приймає рядки з введеннями користувача у вкладку 1, повертає буфер символів. 
-			Реалізацію цієї функції можна побачити на \cref{lst:code}.
-		\funcitem{cpp}|QString* tab2func(... QString ...)|
-			Приймає рядки з введеннями користувача у вкладку 2, повертає буфер символів.
-			Реалізацію цієї функції можна побачити на \cref{lst:code}.
-	\end{funcDescription}
-	
-	\section{Алгоритм вирішення задачі 1}
-	Алгоритм вирішення задачі 1 повністю оснований на теорії з \cref{sec:prb1thr} та реалізує її мовою С++ у функції \cppinline|tab1func()| на \cref{lst:code}.
-
-	\section{Алгоритм вирішення задачі 2}
-	Алгоритм вирішення задачі 2 повністю оснований на теорії з \cref{sec:prb2thr} та реалізує її мовою С++ у функції \cppinline|tab2func()| на \cref{lst:code}. Було застосовано \enquote{метод однакових впливів} для обчисленя абсолютних похибок.
 
 	\FloatBarrier
 	\chapter{Тестування}
 	Протестуємо отриманий прграмний застосунок. 
-	\section{Контрольні приклади}
-	Перевіримо правильність результатів роботи програми на прикладах які наведені в \cite{computational_methods} у практичному занятті \prodnumber{}.
-	\subsection{Приклад 1}
+	Правильність результатів роботи програми було перевірено на прикладах які наведені в \cite{computational_methods} у практичному занятті \prodnumber{}.
+	\section{Контрольний приклад 1}
 	Приклад 1 має наступну умову:
+
+	Знайти додатні корені рівняння 
 	\begin{gather}
+		x^3-x-1=0.
 	\end{gather}
+	методом простої ітерації з точністю \(\varepsilon = 10^{-4}\). 
+
 	Та наступну відповідь:
 	\begin{gather}
+		x = 1.3246\pm0.0001. 
 	\end{gather}
 
-	\subsection{Приклад 2}
-	Приклад 2 має наступну умову:
-	\begin{gather}
-	\end{gather}
-	Та наступну відповідь:
-	\begin{gather}
-	\end{gather}
-	
-	\section{Розвʼязання задачі 1}
+	\begin{figure}[!h]
+		\begin{center}
+			\includegraphics[width=0.95\textwidth]{\subfix{images/test01}}
+		\end{center}
+		\caption{Розвʼязання контрольного прикладу 1}\label{fig:test01}
+	\end{figure}
+	Відповідь збігається з контрольним прикладом.
 
-	\section{Розвʼязання задачі 2}
+	\section{Розвʼязання задачі згідно варіанту}
+	Було проведено розвʼязання задачі згідно варіанту. В результаті було отримано корені:
+	\begin{gather}
+		x_1=-1.49164,
+	\end{gather}
+	\begin{figure}[!h]
+		\begin{center}
+		\includegraphics[width=0.95\textwidth]{\subfix{images/test1}}
+		\end{center}
+		\caption{Розвʼязання задачі методом МПІ}\label{fig:test1}
+	\end{figure}
 
 	\FloatBarrier
+	\newpage
 	\chapter{Висновки}
 	В результаті розробки програмного застосунку було:
 	\begin{itemize}
 		\item
 		\item
+		\item
 	\end{itemize}
 	Було отримано програмний застосунок який здатен:
 	\begin{itemize}
-		\item
-		\item
-		\item
-		\item
+		\item 
 	\end{itemize}
 \end{document}
