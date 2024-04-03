@@ -43,3 +43,6 @@ data/subject.txt
 # Product
 *.pdf
 !/images/.gitkeep
+
+# .git alias
+.gitl

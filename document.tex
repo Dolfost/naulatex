@@ -9,8 +9,8 @@
 	worknumber=1,
 	printprodnumber,
 	proddate={\today},
-	worktheme={\textbackslash{}worktheme},
-	nummet, lab,
+	worktheme={Первинний статистичний аналіз та відтворення розподілів},
+	matstat, lab,
 ]{packages/setup}
 
 \begin{document}
@@ -25,8 +25,16 @@
 
 	% Subject file loaded by setup package (packages/setup.sty)
 	\subfile{\subjectpath/chapters/chapter1/chapter1} 
-	% \subfile{\subjectpath/chapters/chapter2/chapter2} 
-	% \subfile{\subjectpath/chapters/chapter3/chapter3} 
+	\FloatBarrier
+	\subfile{\subjectpath/chapters/chapter2/chapter2} 
+	\FloatBarrier
+	\subfile{\subjectpath/chapters/chapter3/chapter3} 
+	\FloatBarrier
+	\subfile{\subjectpath/chapters/chapter4/chapter4} 
+	\FloatBarrier
+	\subfile{\subjectpath/chapters/chapter5/chapter5} 
+	\FloatBarrier
+	% \subfile{\subjectpath/chapters/chapter6/chapter6} 
 
 	% Post-title
 	\input{matter/endtitle}
@@ -35,5 +43,3 @@
 
 
 % PARTIALY DONE: fix bibliography importing with macros path (last line of setup.sty)
-% DONE: fix cleverref and polyglossia compatibility (TODO/d.tex)
-% DONE: fix fonts
