@@ -25,16 +25,16 @@
 
 	% Subject file loaded by setup package (packages/setup.sty)
 	\subfile{\subjectpath/chapters/chapter1/chapter1} 
-	\FloatBarrier
-	\subfile{\subjectpath/chapters/chapter2/chapter2} 
-	\FloatBarrier
-	\subfile{\subjectpath/chapters/chapter3/chapter3} 
-	\FloatBarrier
-	\subfile{\subjectpath/chapters/chapter4/chapter4} 
-	\FloatBarrier
-	\subfile{\subjectpath/chapters/chapter5/chapter5} 
-	\FloatBarrier
-	% \subfile{\subjectpath/chapters/chapter6/chapter6} 
+	\IfFileExists{\subjectpath/chapters/chapter2}{
+		\subfile{\subjectpath/chapters/chapter2/chapter2} 
+		\FloatBarrier
+		\subfile{\subjectpath/chapters/chapter3/chapter3} 
+		\FloatBarrier
+		\subfile{\subjectpath/chapters/chapter4/chapter4} 
+		\FloatBarrier
+		\subfile{\subjectpath/chapters/chapter5/chapter5} 
+		\FloatBarrier
+	}
 
 	% Post-title
 	\input{matter/endtitle}
