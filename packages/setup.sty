@@ -9,6 +9,8 @@ The User setup package.
 \NewDocumentCommand{\proddate}{}{\today}
 \NewDocumentCommand{\prodnumber}{}{}
 
+\NewDocumentCommand{\commithash}{}{}
+
 \NewDocumentCommand{\subjectname}{}{subjectname}
 \NewDocumentCommand{\prodname}{}{prodname}
 \NewDocumentCommand{\worktheme}{}{worktheme}
@@ -16,11 +18,18 @@ The User setup package.
 
 \NewDocumentCommand{\subjectpath}{}{}
 
-
 \DeclareOptionX{modnumber}{\RenewDocumentCommand{\modnumber}{}{#1}}
 \DeclareOptionX{worknumber}{\RenewDocumentCommand{\worknumber}{}{#1}}
 \DeclareOptionX{worktheme}{\RenewDocumentCommand{\worktheme}{}{#1}}
 \DeclareOptionX{proddate}{\RenewDocumentCommand{\proddate}{}{#1}}
+\DeclareOptionX{commit}{\RenewDocumentCommand{\commithash}{}{#1}}
+
+\NewDocumentCommand{\commit}{s}{%
+	\IfBooleanTF{#1}
+		{\commithash}
+		{\texttt{\commithash}}%
+}
+
 \DeclareOptionX{printprodnumber}{%
 	\RenewDocumentCommand{\prodnumber}{}{№\modnumber.\worknumber}%
 }%
