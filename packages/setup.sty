@@ -41,6 +41,12 @@ The User setup package.
 	\renewcommand{\subjectpath}{subjects/oop}%
 }
 
+\DeclareOptionX{sysprog}{%
+	\RenewDocumentCommand{\subjectname}{}{Системне програмування}%
+	\RenewDocumentCommand{\teacher}{}{Андрій Костянтинович Шевченко}%
+	\renewcommand{\subjectpath}{subjects/sysprog}%
+}
+
 \DeclareOptionX{nummet}{%
 	\RenewDocumentCommand{\subjectname}{}{Обчислювальні~методи}%
 	\RenewDocumentCommand{\teacher}{}{доцент,~Оксана~Михайлівна~Бердник}%
@@ -80,6 +86,10 @@ The User setup package.
 
 \DeclareOptionX{rgr}{%
 	\RenewDocumentCommand{\prodname}{}{Розрахунково--графічна~робота}%
+}
+
+\DeclareOptionX{referat}{%
+	\RenewDocumentCommand{\prodname}{}{Реферат}%
 }
 
 
