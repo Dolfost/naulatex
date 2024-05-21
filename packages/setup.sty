@@ -71,6 +71,12 @@ The User setup package.
 	\renewcommand{\subjectpath}{subjects/matan}%
 }
 
+\DeclareOptionX{diffeq}{%
+	\RenewDocumentCommand{\subjectname}{}{Диференціальні~рівняння}%
+	\RenewDocumentCommand{\teacher}{}{Петро~Федорович~Жук}%
+	\renewcommand{\subjectpath}{subjects/diffeq}%
+}
+
 % Work types
 \DeclareOptionX{lab}{%
 	\RenewDocumentCommand{\prodname}{}{Лабораторна~робота}%
