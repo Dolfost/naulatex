@@ -10,36 +10,45 @@ function(naulatex_setup SUBJECT JOB)
 		message(STATUS "This means that subject have been already selected")
 	endif()
 
-	if(DEFINED NAULATEX_OVERRIDE_SUBJECT)
-		if(NAULATEX_OVERRIDE_SUBJECT)
-			message(STATUS "Because NAULATEX_OVERRIDE_SUBJECT=YES, the selection will be redefined")
+	if(DEFINED NAULATEX_OVERRIDE_CHAPTERS)
+		if(NAULATEX_OVERRIDE_CHAPTERS)
+			message(STATUS "Because NAULATEX_OVERRIDE_CHAPTERS=YES, chapters will be overriden")
+			set(OVERRIDE_CHAPTERS YES)
 		else()
-			message(STATUS "Because NAULATEX_OVERRIDE_SUBJECT=NO, the selection won't be redefined")
-			return()
+			message(STATUS "Because NAULATEX_OVERRIDE_CHAPTERS=NO, chapters won't be overriden")
+			set(OVERRIDE_CHAPTERS NO)
 		endif()
 	else()
-		message(STATUS "If you want to override selection, configure with -DNAULATEX_OVERRIDE_SUBJECT=YES")
-		return()
+		message(STATUS "If you want to override chapters/, configure with -DNAULATEX_OVERRIDE_CHAPTERS=YES")
+			set(OVERRIDE_CHAPTERS NO)
 	endif()
 
 
 	message(STATUS "Selected subject - ${SUBJECT}")
 	message(STATUS "Selected job - ${JOB}")
 
-	file(COPY ${SUBJECTDIR}/chapters
-		DESTINATION ${TEXSRCDIR}
-	)
+	if(OVERRIDE_CHAPTERS)
+		message(STATUS "Setting up chapters")
+		file(COPY ${SUBJECTDIR}/chapters
+			DESTINATION ${TEXSRCDIR}
+		)
+	else()
+		message(STATUS "Setting up chapters - skipped")
+	endif()
 
+	message(STATUS "Setting up subject defines")
 	file(COPY_FILE ${SUBJECTDIR}/defines.tex
 		${TEXBINDIR}/subjectDefines.tex
 	)
 
-	file(COPY_FILE ${SUBJECTDIR}/bibliography.bib
-		${TEXBINDIR}/bibliography.bib
-	)
-
+	message(STATUS "Setting up job defines")
 	file(COPY_FILE ${JOBDIR}/defines.tex
 		${TEXBINDIR}/jobDefines.tex
+	)
+
+	message(STATUS "Setting up bibliography")
+	file(COPY_FILE ${SUBJECTDIR}/bibliography.bib
+		${TEXBINDIR}/bibliography.bib
 	)
 
 	file(MAKE_DIRECTORY ${TEXBINDIR}/matter)
@@ -58,7 +67,7 @@ function(naulatex_setup SUBJECT JOB)
 		endif()
 	endforeach()
 	
-	set(NAULATEX_OVERRIDE_SUBJECT OFF CACHE BOOL 
+	set(NAULATEX_OVERRIDE_CHAPTERS OFF CACHE BOOL 
 		"Trigger template generation" FORCE
 	)
 endfunction()
