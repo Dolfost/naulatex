@@ -6,31 +6,39 @@ function(naulatex_setup SUBJECT JOB)
 	message(STATUS "Selected subject - ${SUBJECT}")
 	message(STATUS "Selected job - ${JOB}")
 	if (EXISTS ${TEXSRCDIR}/chapters)
-		message(STATUS "The chapters/ forlder already exists")
-		message(STATUS "This means that subject have been already selected")
+		message(STATUS "The chapters/ forlder already exists, "
+			"subject have been already selected"
+		)
 	endif()
 
 	if(DEFINED NAULATEX_OVERRIDE_CHAPTERS)
 		if(NAULATEX_OVERRIDE_CHAPTERS)
-			message(STATUS "Because NAULATEX_OVERRIDE_CHAPTERS=YES, chapters will be overriden")
+			message(STATUS "Because NAULATEX_OVERRIDE_CHAPTERS=YES, "
+				"chapters will be overriden"
+			)
 			set(OVERRIDE_CHAPTERS YES)
 		else()
-			message(STATUS "Because NAULATEX_OVERRIDE_CHAPTERS=NO, chapters won't be overriden")
+			message(STATUS "Because NAULATEX_OVERRIDE_CHAPTERS=NO, "
+				"chapters won't be overriden"
+			)
 			set(OVERRIDE_CHAPTERS NO)
 		endif()
 	else()
-		message(STATUS "If you want to override chapters/, configure with -DNAULATEX_OVERRIDE_CHAPTERS=YES")
+		message(STATUS "If you want to override chapters/, "
+			"configure with -DNAULATEX_OVERRIDE_CHAPTERS=YES"
+		)
 			set(OVERRIDE_CHAPTERS NO)
 	endif()
 
 	if (NOT EXISTS ${SUBJECTDIR})
-message(FATAL_ERROR "Selected subject (${SUBJECT}) does not exists in ${TEXSRCDIR}/subjects")
+		message(FATAL_ERROR "Selected subject (${SUBJECT}) "
+			"does not exists in ${TEXSRCDIR}/subjects"
+		)
 	elseif(NOT EXISTS ${JOBDIR})
-		message(FATAL_ERROR "Selected job (${JOB}) does not exists in ${TEXSRCDIR}/jobs")
+		message(FATAL_ERROR "Selected job (${JOB}) "
+			"does not exists in ${TEXSRCDIR}/jobs"
+		)
 	endif()
-
-	message(STATUS "Selected subject - ${SUBJECT}")
-	message(STATUS "Selected job - ${JOB}")
 
 	if(OVERRIDE_CHAPTERS)
 		message(STATUS "Setting up chapters")
