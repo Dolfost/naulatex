@@ -9,6 +9,11 @@ function(naulatex_setup SUBJECT JOB)
 		message(STATUS "The chapters/ forlder already exists, "
 			"subject have been already selected"
 		)
+	else()
+		message(STATUS "The chapters/ folder doesn't exists, "
+			"setting NAULATEX_OVERRIDE_CHAPTERS to YES"
+		)
+		set(NAULATEX_OVERRIDE_CHAPTERS YES)
 	endif()
 
 	if(DEFINED NAULATEX_OVERRIDE_CHAPTERS)
