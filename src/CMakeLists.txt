@@ -14,9 +14,32 @@ configure_file(cmakeDefines.tex.in
 	@ONLY
 )
 
+find_program(LOGFILTER
+	texlogfilter
+	DOC "Log analyser"
+	NO_CHACHE
+)
+
+set(LOG_COMMENT "Trimming logs")
+if(LOGFILTER-NOTFOUND)
+	add_custom_target(log
+		COMMAND ${CMAKE_COMMAND} -E echo 
+			"texloganalyser were not found."
+		COMMENT ${LOG_COMMENT}
+	)
+else()
+	add_custom_target(log
+		COMMAND ${LOGFILTER} 
+			${CMAKE_CURRENT_BINARY_DIR}/document.log
+		COMMENT ${LOG_COMMENT}
+	)
+	set(SILENT_OPTIONS "-silent")
+endif()
+
 add_custom_target(pdf ALL
 	COMMAND ${LATEXMK_EXECUTABLE} document.tex 
-	-r ${CMAKE_CURRENT_BINARY_DIR}/latexmkrc
+		-r ${CMAKE_CURRENT_BINARY_DIR}/latexmkrc
+		${SILENT_OPTIONS}
 	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 	BYPRODUCTS document.pdf document.bbl document.idx
 	COMMENT "Building pdf with latexmk"
