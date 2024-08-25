@@ -23,6 +23,11 @@ function(naulatex_setup SUBJECT JOB)
 			set(OVERRIDE_CHAPTERS NO)
 	endif()
 
+	if (NOT EXISTS ${SUBJECTDIR})
+message(FATAL_ERROR "Selected subject (${SUBJECT}) does not exists in ${TEXSRCDIR}/subjects")
+	elseif(NOT EXISTS ${JOBDIR})
+		message(FATAL_ERROR "Selected job (${JOB}) does not exists in ${TEXSRCDIR}/jobs")
+	endif()
 
 	message(STATUS "Selected subject - ${SUBJECT}")
 	message(STATUS "Selected job - ${JOB}")
