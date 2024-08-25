@@ -17,7 +17,6 @@ configure_file(cmakeDefines.tex.in
 find_program(LOGFILTER
 	texlogfilter
 	DOC "Log analyser"
-	NO_CHACHE
 )
 
 set(LOG_COMMENT "Trimming logs")
@@ -28,6 +27,7 @@ if(LOGFILTER-NOTFOUND)
 		COMMENT ${LOG_COMMENT}
 	)
 else()
+	message(STATUS "Found texlogfilter: ${LOGFILTER}")
 	add_custom_target(log
 		COMMAND ${LOGFILTER} 
 			${CMAKE_CURRENT_BINARY_DIR}/document.log
