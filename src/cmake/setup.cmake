@@ -50,18 +50,21 @@ function(naulatex_setup SUBJECT JOB)
 	endif()
 
 	message(STATUS "Setting up subject defines")
-	file(COPY_FILE ${SUBJECTDIR}/defines.tex
+	configure_file(${SUBJECTDIR}/defines.tex
 		${TEXBINDIR}/subjectDefines.tex
+		COPYONLY
 	)
 
 	message(STATUS "Setting up job defines")
-	file(COPY_FILE ${JOBDIR}/defines.tex
+	configure_file(${JOBDIR}/defines.tex
 		${TEXBINDIR}/jobDefines.tex
+		COPYONLY
 	)
 
 	message(STATUS "Setting up bibliography")
-	file(COPY_FILE ${SUBJECTDIR}/bibliography.bib
+	configure_file(${SUBJECTDIR}/bibliography.bib
 		${TEXBINDIR}/bibliography.bib
+		COPYONLY
 	)
 
 	file(MAKE_DIRECTORY ${TEXBINDIR}/matter)
@@ -69,13 +72,15 @@ function(naulatex_setup SUBJECT JOB)
 	foreach(matter ${MATTER})
 		if(EXISTS ${SUBJECTDIR}/matter/${matter}.tex)
 			message(STATUS "Current subject has custom ${matter}")
-			file(COPY_FILE ${SUBJECTDIR}/matter/${matter}.tex
+			configure_file(${SUBJECTDIR}/matter/${matter}.tex
 				${TEXBINDIR}/matter/${matter}.tex
+				COPYONLY
 			)
 		else()
 			message(STATUS "Using default ${matter} (matter/${matter}.tex)")
-			file(COPY_FILE ${TEXSRCDIR}/matter/${matter}.tex
+			configure_file(${TEXSRCDIR}/matter/${matter}.tex
 				${TEXBINDIR}/matter/${matter}.tex
+				COPYONLY
 			)
 		endif()
 	endforeach()
