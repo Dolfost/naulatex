@@ -1,0 +1,9 @@
+\newcommand{\binaryDirectory}{@CMAKE_CURRENT_BINARY_DIR@}
+\newcommand{\templateDirectory}{@TEXBINDIR@}
+
+\newcommand{\naulatexVersion}{@PROJECT_VERSION@}
+\newcommand{\naulatexVersionMajor}{@PROJECT_VERSION_MAJOR@}
+\newcommand{\naulatexVersionMinor}{@PROJECT_VERSION_MINOR@}
+\newcommand{\naulatexVersionPatch}{@PROJECT_VERSION_PATCH@}
+\newcommand{\naulatexVersionTweak}{@PROJECT_VERSION_TWEAK@}
+\newcommand{\naulatexHomepage}{@PROJECT_HOMEPAGE_URL@}

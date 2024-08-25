@@ -46,3 +46,6 @@ data/subject.txt
 
 # .git alias
 .gitl
+
+# cmake binary directory
+build/

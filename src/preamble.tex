@@ -1,6 +1,8 @@
 % !TeX root = document.tex
 \documentclass[11pt]{report}
 
+\input{../build/src/produced/cmakeDefines}
+
 \usepackage{polyglossia}
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
@@ -71,7 +73,7 @@
 \usepackage{extramarks}
 \usepackage{packages/visuals}
 
-\usepackage[cachedir=minted_cache, newfloat=true]{minted}
+\usepackage[outputdir=\binaryDirectory, newfloat=true]{minted}
 \usepackage{packages/minted-setup}
 
 \usepackage[autostyle]{csquotes}
