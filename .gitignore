@@ -49,3 +49,6 @@ data/subject.txt
 
 # cmake binary directory
 build/
+
+# produced text
+src/chpaters
