@@ -91,6 +91,6 @@ function(naulatex_setup SUBJECT JOB)
 	endforeach()
 	
 	set(NAULATEX_OVERRIDE_CHAPTERS OFF CACHE BOOL 
-		"Trigger template generation" FORCE
+		"Trigger chapters overriding" FORCE
 	)
 endfunction()
