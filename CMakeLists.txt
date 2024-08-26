@@ -2,12 +2,6 @@ cmake_minimum_required(VERSION 3.25)
 
 list(APPEND CMAKE_MODULE_PATH 
 	"${CMAKE_CURRENT_LIST_DIR}/cmake"
-	"${CMAKE_CURRENT_BINARY_DIR}/cmake"
-)
-
-file(DOWNLOAD 
-	https://raw.githubusercontent.com/dokempf/UseLatexMk/main/FindLatexMk.cmake
-	cmake/FindLatexMk.cmake
 )
 
 include(version)
