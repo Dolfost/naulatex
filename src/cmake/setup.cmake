@@ -47,8 +47,13 @@ function(naulatex_setup SUBJECT JOB)
 
 	if(OVERRIDE_CHAPTERS)
 		message(STATUS "Setting up chapters")
+		file(REMOVE_RECURSE ${TEXSRCDIR}/chapters)
 		file(COPY ${SUBJECTDIR}/chapters
 			DESTINATION ${TEXSRCDIR}
+		)
+		configure_file(${SUBJECTDIR}/chapters.tex
+			${TEXBINDIR}/chapters.tex
+			COPYONLY
 		)
 	else()
 		message(STATUS "Setting up chapters - skipped")
