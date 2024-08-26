@@ -28,8 +28,9 @@ if(NOT TEXLOGFILTER_FOUND)
 	)
 else()
 	add_custom_target(log
-		COMMAND ${LOGFILTER} 
-			${CMAKE_CURRENT_BINARY_DIR}/document.log
+		COMMAND ${TEXLOGFILTER_EXECUTABLE}
+			${CMAKE_CURRENT_BINARY_DIR}/document.log 
+		 --ref --filename
 		COMMENT ${LOG_COMMENT}
 	)
 	set(SILENT_OPTIONS "-silent")
