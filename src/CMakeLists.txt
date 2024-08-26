@@ -1,5 +1,10 @@
+list(APPEND CMAKE_MODULE_PATH 
+	"${CMAKE_CURRENT_LIST_DIR}/cmake"
+)
+
 find_package(LATEX REQUIRED)
 find_package(LatexMk REQUIRED)
+find_package(TexLogFilter)
 
 set(TEXBINDIR ${CMAKE_CURRENT_BINARY_DIR}/produced)
 set(TEXSRCDIR ${CMAKE_CURRENT_SOURCE_DIR})
@@ -14,20 +19,14 @@ configure_file(cmakeDefines.tex.in
 	@ONLY
 )
 
-find_program(LOGFILTER
-	texlogfilter
-	DOC "Log analyser"
-)
-
 set(LOG_COMMENT "Trimming logs")
-if(LOGFILTER-NOTFOUND)
+if(NOT TEXLOGFILTER_FOUND)
 	add_custom_target(log
 		COMMAND ${CMAKE_COMMAND} -E echo 
 			"texloganalyser were not found."
 		COMMENT ${LOG_COMMENT}
 	)
 else()
-	message(STATUS "Found texlogfilter: ${LOGFILTER}")
 	add_custom_target(log
 		COMMAND ${LOGFILTER} 
 			${CMAKE_CURRENT_BINARY_DIR}/document.log
