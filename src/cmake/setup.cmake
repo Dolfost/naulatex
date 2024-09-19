@@ -51,14 +51,15 @@ function(naulatex_setup SUBJECT JOB)
 		file(COPY ${SUBJECTDIR}/chapters
 			DESTINATION ${TEXSRCDIR}
 		)
-		configure_file(${SUBJECTDIR}/chapters.tex
-			${TEXBINDIR}/chapters.tex
-			COPYONLY
-		)
 	else()
 		message(STATUS "Setting up chapters - skipped")
 	endif()
 
+	message(STATUS "Setting up chapters header")
+	configure_file(${SUBJECTDIR}/chapters.tex
+		${TEXBINDIR}/chapters.tex
+		COPYONLY
+	)
 	message(STATUS "Setting up subject defines")
 	configure_file(${SUBJECTDIR}/defines.tex
 		${TEXBINDIR}/subjectDefines.tex
