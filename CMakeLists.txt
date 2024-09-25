@@ -14,4 +14,4 @@ project(naulatex
 
 add_subdirectory(src)
 
-naulatex_setup(highprog lab)
+naulatex_setup(nummetVas lab)
