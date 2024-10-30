@@ -14,4 +14,4 @@ project(naulatex
 
 add_subdirectory(src)
 
-naulatex_setup(matstat lab)
+naulatex_setup(nummetVas lab)
