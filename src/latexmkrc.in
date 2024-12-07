@@ -5,5 +5,5 @@ $make = "@CMAKE_MAKE_COMMAND@";
 $makeindex = "@MAKEINDEX_COMPILER@ %O -o %D %S";
 $out_dir = "@CMAKE_CURRENT_BINARY_DIR@";
 $pdf_mode = 1;
-$pdflatex = "@LUALATEX_COMPILER@ -shell-escape -interaction=nonstopmode %O %S";
+$pdflatex = "@LUALATEX_COMPILER@ -shell-escape -file-line-error -interaction=nonstopmode %O %S";
 $ps2pdf = "@PS2PDF_CONVERTER@ %O %S %D";
