@@ -2,53 +2,7 @@
 .DS_Store
 
 # Co-product files
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.bbl
-*.bcf
-*.blg
-*.dvi
-*.idx
-*.ilg
-*.ind
-*.pyg
-*.out
-*.gz
-*.xml
-minted_cache/
-TODO/
-*.nav
-*.snm
-
-# nvim
-*.swp
-tags
-tags.lock
-
-# Help scripts
-data/subject.txt
-
-# drawio
-*.bkp
-
-# Contents
-*.loe
-*.lof
-*.lol
-*.toc
-*.lot
-
-# Product
-*.pdf
-!/images/.gitkeep
-
-# .git alias
-.gitl
-
-# cmake binary directory
 build/
 
-# produced text
-src/chapters
+# results
+src/contents

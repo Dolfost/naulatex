@@ -6,16 +6,17 @@ find_package(LATEX REQUIRED)
 find_package(LatexMk REQUIRED)
 find_package(TexLogFilter)
 
-set(TEXBINDIR ${CMAKE_CURRENT_BINARY_DIR}/config)
-set(TEXSRCDIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(NAULATEX_CONFIG_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/config)
+set(NAULATEX_TEMPLATES_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/templates)
+set(NAULATEX_CONTENTS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/contents")
 
-configure_file(latexmkrc.in
-	${CMAKE_CURRENT_BINARY_DIR}/latexmkrc
+configure_file("${NAULATEX_TEMPLATES_DIRECTORY}/latexmkrc.in"
+	"${CMAKE_CURRENT_BINARY_DIR}/latexmkrc"
 	@ONLY
 )
 
-configure_file(cmakeDefines.tex.in
-	${TEXBINDIR}/cmakeDefines.tex
+configure_file("${NAULATEX_TEMPLATES_DIRECTORY}/cmakeDefines.tex.in"
+	"${NAULATEX_CONFIG_DIRECTORY}/cmakeDefines.tex"
 	@ONLY
 )
 
@@ -48,8 +49,8 @@ add_custom_target(pdf ALL
 	COMMENT "Building pdf with latexmk"
 )
 
-configure_file(continuous.sh.in
-	${CMAKE_BINARY_DIR}/continious
+configure_file("${NAULATEX_TEMPLATES_DIRECTORY}/continuous.sh.in"
+	"${CMAKE_BINARY_DIR}/continious"
 	FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 	@ONLY
 )
@@ -66,4 +67,8 @@ list(APPEND CMAKE_MODULE_PATH
 )
 
 include(setup)
-return(PROPAGATE TEXSRCDIR TEXBINDIR)
+return(PROPAGATE 
+	NAULATEX_TEMPLATES_DIRECTORY 
+	NAULATEX_CONFIG_DIRECTORY
+	NAULATEX_CONTENTS_DIRECTORY
+)

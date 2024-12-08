@@ -1,5 +1,6 @@
 \newcommand{\binaryDirectory}{@CMAKE_CURRENT_BINARY_DIR@}
 \newcommand{\configDirectory}{@TEXBINDIR@}
+\newcommand{\contentsDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/contents}
 \newcommand{\mainDocument}{@CMAKE_CURRENT_SOURCE_DIR@/document.tex}
 
 \newcommand{\naulatexVersion}{@PROJECT_VERSION@}
