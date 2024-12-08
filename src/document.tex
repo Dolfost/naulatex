@@ -2,20 +2,20 @@
 % !TeX program = lualatex
 
 \input{preamble}
-\addbibresource{\templateDirectory/bibliography.bib}
+\addbibresource{\configDirectory/bibliography.bib}
 
 \usepackage[iftox]{packages/misc}
 
 \begin{document}
 
 \input{defines}
-\input{\templateDirectory/matter/title}
-\input{\templateDirectory/matter/frontmatter}
+\input{\configDirectory/matter/title}
+\input{\configDirectory/matter/frontmatter}
 
 % \nocite{*}
 
-\input{\templateDirectory/chapters}
+\input{\configDirectory/chapters}
 
-\input{\templateDirectory/matter/backmatter}
+\input{\configDirectory/matter/backmatter}
 
 \end{document}

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+'@LATEXMK_EXECUTABLE@' '@CMAKE_CURRENT_SOURCE_DIR@/document.tex' -cd \
+	-r '@CMAKE_CURRENT_BINARY_DIR@/latexmkrc' @LATEXMK_OPTIONS@ -pvc \
+	-view=none | '@TEXLOGFILTER_EXECUTABLE@' @TEXLOGFILTER_OPTIONS@
