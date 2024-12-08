@@ -14,4 +14,15 @@ project(naulatex
 
 add_subdirectory(src)
 
-naulatex_setup(highprog kurs)
+set(NAULATEX_SUBJECT matstat
+	CACHE STRING "Subject template name"
+)
+set(NAULATEX_JOB lab
+	CACHE STRING "Job template name"
+)
+option(NAULATEX_OVERRIDE_CHAPTERS
+	"Override chapters switch"
+	NO
+)
+
+naulatex_setup(${NAULATEX_SUBJECT} ${NAULATEX_JOB})
