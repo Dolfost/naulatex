@@ -6,23 +6,23 @@ list(APPEND CMAKE_MODULE_PATH
 
 include(version)
 
-project(naulatex
+project(latex_report_template
 	VERSION ${GIT_VERSION_TAG}
-	HOMEPAGE_URL https://github.com/Dolfost/naulatex
+	HOMEPAGE_URL https://github.com/Dolfost/latex-report-template
 	LANGUAGES NONE
 )
 
 add_subdirectory(src)
 
-set(NAULATEX_SUBJECT matstat
+set(LRT_SUBJECT matstat
 	CACHE STRING "Subject template name"
 )
-set(NAULATEX_JOB lab
+set(LRT_JOB lab
 	CACHE STRING "Job template name"
 )
-option(NAULATEX_OVERRIDE_CHAPTERS
+option(LRT_OVERRIDE_CHAPTERS
 	"Override contents/chapters"
 	NO
 )
 
-naulatex_setup(${NAULATEX_SUBJECT} ${NAULATEX_JOB})
+lrt_setup(${LRT_SUBJECT} ${LRT_JOB})

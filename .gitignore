@@ -1,8 +1,5 @@
 # MacOS stuff
 .DS_Store
 
-# Co-product files
+# Generated files
 build/
-
-# results
-src/contents

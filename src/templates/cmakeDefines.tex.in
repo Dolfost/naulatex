@@ -1,13 +1,14 @@
 \newcommand{\binaryDirectory}{@CMAKE_CURRENT_BINARY_DIR@}
-\newcommand{\configDirectory}{@NAULATEX_CONFIG_DIRECTORY@}
-\newcommand{\contentsDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/contents}
-\newcommand{\templatesDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/templates}
-\newcommand{\resourcesDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/templates/resources}
+\newcommand{\configDirectory}{@LRT_CONFIG_DIRECTORY@}
+\newcommand{\contentsDirectory}{@LRT_CONTENTS_DIRECTORY@}
+\newcommand{\templatesDirectory}{@LRT_TEMPLATES_DIRECTORY@}
+\newcommand{\resourcesDirectory}{@LRT_RESOURCES_DIRECTORY@}
+\newcommand{\chaptersDirectory}{@LRT_CHAPTERS_DIRECTORY@}
 \newcommand{\mainDocument}{@CMAKE_CURRENT_SOURCE_DIR@/document.tex}
 
-\newcommand{\naulatexVersion}{@PROJECT_VERSION@}
-\newcommand{\naulatexVersionMajor}{@PROJECT_VERSION_MAJOR@}
-\newcommand{\naulatexVersionMinor}{@PROJECT_VERSION_MINOR@}
-\newcommand{\naulatexVersionPatch}{@PROJECT_VERSION_PATCH@}
-\newcommand{\naulatexVersionTweak}{@PROJECT_VERSION_TWEAK@}
-\newcommand{\naulatexHomepage}{@PROJECT_HOMEPAGE_URL@}
+\newcommand{\lrtVersion}{@PROJECT_VERSION@}
+\newcommand{\lrtVersionMajor}{@PROJECT_VERSION_MAJOR@}
+\newcommand{\lrtVersionMinor}{@PROJECT_VERSION_MINOR@}
+\newcommand{\lrtVersionPatch}{@PROJECT_VERSION_PATCH@}
+\newcommand{\lrtVersionTweak}{@PROJECT_VERSION_TWEAK@}
+\newcommand{\lrtHomepage}{@PROJECT_HOMEPAGE_URL@}
