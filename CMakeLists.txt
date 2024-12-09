@@ -20,7 +20,6 @@ set(NAULATEX_SUBJECT matstat
 set(NAULATEX_JOB lab
 	CACHE STRING "Job template name"
 )
-
 option(NAULATEX_OVERRIDE_CHAPTERS
 	"Override contents/chapters"
 	NO
