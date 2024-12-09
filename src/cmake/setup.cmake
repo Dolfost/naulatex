@@ -57,10 +57,6 @@ function(naulatex_setup SUBJECT JOB)
 		file(COPY "${SUBJECT_PATH}/chapters"
 			DESTINATION "${NAULATEX_CONTENTS_DIRECTORY}"
 		)
-		configure_file("${SUBJECT_PATH}/chapters.tex"
-			"${NAULATEX_CONFIG_DIRECTORY}/chapters.tex"
-			COPYONLY
-		)
 		file(CONFIGURE
 			OUTPUT "${CHAPTERS_LOCK}"
 			@ONLY CONTENT "@SUBJECT@\n@JOB@"
@@ -68,6 +64,12 @@ function(naulatex_setup SUBJECT JOB)
 	else()
 		message(STATUS "Setting up chapters - skipped")
 	endif()
+
+	message(STATUS "Setting up chapters header")
+	configure_file("${SUBJECT_PATH}/chapters.tex"
+		"${NAULATEX_CONFIG_DIRECTORY}/chapters.tex"
+		COPYONLY
+	)
 
 	if (NOT EXISTS "${NAULATEX_CONTENTS_DIRECTORY}/redefines.tex")
 		message(STATUS "Setting up contents redefines")

@@ -1,6 +1,8 @@
 \newcommand{\binaryDirectory}{@CMAKE_CURRENT_BINARY_DIR@}
-\newcommand{\configDirectory}{@TEXBINDIR@}
+\newcommand{\configDirectory}{@NAULATEX_CONFIG_DIRECTORY@}
 \newcommand{\contentsDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/contents}
+\newcommand{\templatesDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/templates}
+\newcommand{\resourcesDirectory}{@CMAKE_CURRENT_SOURCE_DIR@/templates/resources}
 \newcommand{\mainDocument}{@CMAKE_CURRENT_SOURCE_DIR@/document.tex}
 
 \newcommand{\naulatexVersion}{@PROJECT_VERSION@}
